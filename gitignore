@@ -84,9 +84,11 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
-# Dataset and output folders
+# Dataset and output folders except run sample
 dataset/
-output/
+output/*
+!output/run_sample/
+!output/run_sample/**
 
 # Logs
 *.log

@@ -1,5 +1,6 @@
 import numpy as np
 import skfuzzy as fuzz 
+import sklearn.cluster
 
 
 class Clusterer:
@@ -25,6 +26,26 @@ class Clusterer:
         cntr, u, _, _, _, _, _ = fuzz.cmeans(
             data=X.T, c=n_clusters, m=m, error=error, maxiter=max_iter, seed=seed
         )
+        return cntr, u
+    
+    def kmeans_cluster(self, X, n_clusters, seed):
+        """
+        Perform K-means clustering on the input data.
+
+        Parameters:
+            X (np.ndarray): Data matrix (users x items).
+            n_clusters (int): Number of clusters.
+            seed (int): Random seed for reproducibility.
+
+        Returns:
+            cntr (np.ndarray): Cluster centers.
+            u (np.ndarray): Hard partitioned matrix (one-hot membership matrix).
+        """
+        kmeans = sklearn.cluster.KMeans(n_clusters=n_clusters, random_state=seed)
+        labels = kmeans.fit_predict(X)
+        cntr = kmeans.cluster_centers_
+        u = np.zeros((n_clusters, X.shape[0]))
+        u[labels, np.arange(X.shape[0])] = 1
         return cntr, u
 
     def predict(self, cntr, membership):

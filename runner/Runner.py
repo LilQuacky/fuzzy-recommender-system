@@ -5,6 +5,7 @@ from runner.result_manager import ResultManager
 from utils.normalizer import NORMALIZATION_FUNCS
 from datetime import datetime
 import os
+import numpy as np
 
 class Runner:
     """
@@ -36,7 +37,6 @@ class Runner:
       from utils.Cluster import Clusterer
       from utils.Evaluator import Evaluator
       from utils.Plotter import Plotter
-      import numpy as np
 
       results = {}
       clusterer = Clusterer()
@@ -53,6 +53,10 @@ class Runner:
       error = self.config["error"]
       seed = self.config["seed"]
 
+      clustering_methods = self.config.get("clustering_methods", ["fcm"])
+      defuzz_methods = self.config.get("defuzzification_methods", ["maximum"])
+      neighbor_methods = self.config.get("neighbor_selection_methods", ["none"])
+
       for norm_name in normalizations:
           print(f"Running experiment with normalization: {norm_name}")
           norm_func = NORMALIZATION_FUNCS[norm_name]
@@ -67,15 +71,39 @@ class Runner:
           for c in cluster_values:
               results[norm_name][str(c)] = {}
               for m in m_values:
-                  print(f"Running experiment with cluster: {c} and fuzziness: {m}")
-                  experiment = Experiment(
-                      R_train_scaled, R_test_scaled, R_train, R_test_aligned,
-                      n_clusters=c, m=m, max_iter=max_iter, error=error, seed=seed,
-                      clusterer=clusterer, evaluator=evaluator, plotter=plotter
-                  )
-                  metrics = experiment.run()
-                  results[norm_name][str(c)][str(m)] = metrics
+                  results[norm_name][str(c)][str(m)] = {}
+                  for clustering_method in clustering_methods:
+                      results[norm_name][str(c)][str(m)][clustering_method] = {}
+                      for defuzz_method in defuzz_methods:
+                          results[norm_name][str(c)][str(m)][clustering_method][defuzz_method] = {}
+                          for neighbor_method in neighbor_methods:
+                              base_plot_dir = os.path.join(
+                                  self.config["images_dir"],
+                                  f"norm={norm_name}"
+                              )
+                              os.makedirs(base_plot_dir, exist_ok=True)
+                              # Sottodirectory per ogni tipo di plot
+                              comparison_dir = os.path.join(base_plot_dir, "comparison")
+                              fuzzy_clusters_dir = os.path.join(base_plot_dir, "fuzzy_clusters")
+                              membership_heatmap_dir = os.path.join(base_plot_dir, "membership_heatmap")
+                              membership_histogram_dir = os.path.join(base_plot_dir, "membership_histogram")
+                              for d in [comparison_dir, fuzzy_clusters_dir, membership_heatmap_dir, membership_histogram_dir]:
+                                  os.makedirs(d, exist_ok=True)
+                              # Passa la directory base al Plotter, che poi userà le subdir in base al tipo di plot
+                              plotter = Plotter(base_plot_dir, show_plots=self.config.get("show_plots"))
+                              print(f"Running: norm={norm_name}, c={c}, m={m}, clustering={clustering_method}, defuzz={defuzz_method}, neighbor={neighbor_method}")
+                              experiment = Experiment(
+                                  R_train_scaled, R_test_scaled, R_train, R_test_aligned,
+                                  n_clusters=c, m=m, max_iter=max_iter, error=error, seed=seed,
+                                  clusterer=clusterer, evaluator=evaluator, plotter=plotter,
+                                  clustering_method=clustering_method,
+                                  defuzz_method=defuzz_method,
+                                  neighbor_method=neighbor_method
+                              )
+                              metrics = experiment.run()
+                              results[norm_name][str(c)][str(m)][clustering_method][defuzz_method][neighbor_method] = metrics
 
       self.result_manager.save_results(results)
+      self.result_manager.save_results_csv(results)
       self.result_manager.save_config(self.config)
       print("Runner completed all experiments.")

@@ -33,6 +33,8 @@ class Plotter:
         reduced = pca.fit_transform(R_scaled)
         cluster_labels = np.argmax(membership, axis=0)
 
+        fuzzy_clusters_dir = os.path.join(self.output_dir, "fuzzy_clusters")
+        os.makedirs(fuzzy_clusters_dir, exist_ok=True)
         plt.figure(figsize=(8, 6))
         scatter = plt.scatter(reduced[:, 0], reduced[:, 1], c=cluster_labels, cmap='Set1', alpha=0.7)
         plt.title("User Clusters (Fuzzy C-Means)")
@@ -40,10 +42,13 @@ class Plotter:
         plt.ylabel("PCA Component 2")
         plt.colorbar(scatter, label='Cluster Label')
         fname = f"fuzzy_clusters_pca.png" if prefix is None else f"fuzzy_clusters_pca_{prefix}.png"
-        plt.savefig(os.path.join(self.output_dir, fname))
+        plt.savefig(os.path.join(fuzzy_clusters_dir, fname))
         if self.show_plots:
             plt.show()
+        plt.close()
 
+        membership_histogram_dir = os.path.join(self.output_dir, "membership_histogram")
+        os.makedirs(membership_histogram_dir, exist_ok=True)
         plt.figure(figsize=(8, 4))
         max_membership = np.max(membership, axis=0)
         plt.hist(max_membership, bins='auto', color='skyblue', edgecolor='black')
@@ -51,8 +56,11 @@ class Plotter:
         plt.xlabel("Maximum Membership Value")
         plt.ylabel("Frequency")
         fname = f"membership_histogram.png" if prefix is None else f"membership_histogram_{prefix}.png"
-        plt.savefig(os.path.join(self.output_dir, fname))
+        plt.savefig(os.path.join(membership_histogram_dir, fname))
+        plt.close()
 
+        membership_heatmap_dir = os.path.join(self.output_dir, "membership_heatmap")
+        os.makedirs(membership_heatmap_dir, exist_ok=True)
         entropy = -np.sum(membership * np.log(membership + 1e-10), axis=0)
         idx_uncertain = np.argsort(entropy)[-10:]
         plt.figure(figsize=(10, 6))
@@ -61,9 +69,10 @@ class Plotter:
         plt.xlabel("User")
         plt.ylabel("Cluster")
         fname = f"membership_heatmap.png" if prefix is None else f"membership_heatmap_{prefix}.png"
-        plt.savefig(os.path.join(self.output_dir, fname))
+        plt.savefig(os.path.join(membership_heatmap_dir, fname))
         if self.show_plots:
             plt.show()
+        plt.close()
 
     def plot_single_normalization(self, R_norm, membership, norm_name):
         """
@@ -75,6 +84,8 @@ class Plotter:
             norm_name (str): Name of the normalization method (used in plot titles and filenames).
         """
         os.makedirs(self.output_dir, exist_ok=True)
+        comparison_dir = os.path.join(self.output_dir, "comparison")
+        os.makedirs(comparison_dir, exist_ok=True)
         pca = PCA(n_components=2)
         reduced = pca.fit_transform(R_norm)
         cluster_labels = np.argmax(membership, axis=0)
@@ -101,6 +112,7 @@ class Plotter:
         plt.ylabel("Frequency")
 
         plt.tight_layout()
-        plt.savefig(os.path.join(self.output_dir, f"comparison_{norm_name}.png"), dpi=300, bbox_inches='tight')
+        plt.savefig(os.path.join(comparison_dir, f"comparison_{norm_name}.png"), dpi=300, bbox_inches='tight')
         if self.show_plots:
             plt.show()
+        plt.close()

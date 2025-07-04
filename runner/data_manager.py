@@ -9,7 +9,7 @@ class DataManager:
 
     Methods:
         - load_and_preprocess(): Loads the dataset, filters for density, splits into train/test, and aligns test set.
-        - normalize(R_train, R_test_aligned, norm_func): Normalizes the train and test matrices using a provided normalization function, filling missing values with row or global means.
+        - normalize(R_train, R_test_aligned): Normalizes the train and test matrices using a provided normalization function, filling missing values with row or global means.
     """
     def __init__(self, config):
         self.config = config
@@ -24,7 +24,7 @@ class DataManager:
         R_test_aligned = R_test.reindex(columns=R_train.columns, fill_value=np.nan)
         return R_train, R_test_aligned
 
-    def normalize(self, R_train, R_test_aligned, norm_func):
+    def normalize(self, R_train, R_test_aligned):
         R_train_norm = R_train.astype(float)
         R_test_norm = R_test_aligned.astype(float)
         global_mean = R_train_norm.stack().mean()

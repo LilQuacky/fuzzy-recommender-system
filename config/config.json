@@ -1,18 +1,10 @@
 {
     "dataset_name": "ml-100k",
-    "normalizations": [
-        "simple_centering"
-    ],
+    "normalizations": ["simple_centering", "no_normalization", "zscore_per_user", "minmax_per_user"],
     "min_user_ratings": 150,
     "min_item_ratings": 150,
-    "cluster_values": [
-        4,
-        6
-    ],
-    "m_values": [
-        1.9,
-        2.7
-    ],
+    "cluster_values": [4, 6, 8],
+    "m_values": [1.5, 2.0, 2.5],
     "noise_std": 0.05,
     "test_size": 0.2,
     "random_state": 42,
@@ -23,5 +15,10 @@
     "show_plots": false,
     "images_subdir": "images",
     "results_subdir": "results",
-    "run_timestamp_format": "run_%Y_%m_%d_%H_%M_%S"
+    "run_timestamp_format": "run_%Y_%m_%d_%H_%M_%S",
+    "clustering_methods": ["kmeans", "fcm"],
+    "defuzzification_methods": ["maximum", "cog"],
+    "neighbor_selection_methods": ["pearson", "none"],
+    "summary_only": true,
+    "top_n": 5
 }
