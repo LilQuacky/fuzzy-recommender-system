@@ -1,5 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+runner/__pycache__/
+utils/__pycache__/
 *.py[cod]
 *$py.class
 
@@ -86,9 +88,7 @@ Desktop.ini
 
 # Dataset and output folders except run sample
 dataset/
-output/*
-!output/run_sample/
-!output/run_sample/**
+output/
 
 # Logs
 *.log
