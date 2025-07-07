@@ -1,0 +1,32 @@
+Top 5 runs by train_rmse:
+      normalization  n_clusters    m clustering_method defuzz_method neighbor_method  train_rmse  train_mae  test_rmse  test_mae  avg_max_membership   avg_entropy  elapsed_sec
+1  simple_centering           4  1.5            kmeans       maximum         pearson    0.680432   0.531311    0.60813  0.475168                 1.0 -1.000000e-10    22.723310
+2  simple_centering           4  1.5            kmeans           cog         pearson    0.680432   0.531311    0.60813  0.475168                 1.0 -1.000000e-10    17.960414
+3  simple_centering           4  2.0            kmeans           cog         pearson    0.680432   0.531311    0.60813  0.475168                 1.0 -1.000000e-10    25.941996
+4  simple_centering           4  2.0            kmeans       maximum         pearson    0.680432   0.531311    0.60813  0.475168                 1.0 -1.000000e-10    20.510665
+5  simple_centering           4  2.5            kmeans           cog         pearson    0.680432   0.531311    0.60813  0.475168                 1.0 -1.000000e-10    21.642515
+
+Top 5 runs by train_mae:
+      normalization  n_clusters    m clustering_method defuzz_method neighbor_method  train_rmse  train_mae  test_rmse  test_mae  avg_max_membership   avg_entropy  elapsed_sec
+1  simple_centering           4  1.5            kmeans       maximum         pearson    0.680432   0.531311    0.60813  0.475168                 1.0 -1.000000e-10    22.723310
+2  simple_centering           4  1.5            kmeans           cog         pearson    0.680432   0.531311    0.60813  0.475168                 1.0 -1.000000e-10    17.960414
+3  simple_centering           4  2.0            kmeans           cog         pearson    0.680432   0.531311    0.60813  0.475168                 1.0 -1.000000e-10    25.941996
+4  simple_centering           4  2.0            kmeans       maximum         pearson    0.680432   0.531311    0.60813  0.475168                 1.0 -1.000000e-10    20.510665
+5  simple_centering           4  2.5            kmeans           cog         pearson    0.680432   0.531311    0.60813  0.475168                 1.0 -1.000000e-10    21.642515
+
+Top 5 runs by test_rmse:
+      normalization  n_clusters    m clustering_method defuzz_method neighbor_method  train_rmse  train_mae  test_rmse  test_mae  avg_max_membership   avg_entropy  elapsed_sec
+1  simple_centering          15  1.5            kmeans       maximum         pearson    0.702644   0.561481   0.597194  0.464918                 1.0 -1.000000e-10     9.245661
+2  simple_centering          15  1.5            kmeans           cog         pearson    0.702644   0.561481   0.597194  0.464918                 1.0 -1.000000e-10     8.531273
+3  simple_centering          15  2.0            kmeans           cog         pearson    0.702644   0.561481   0.597194  0.464918                 1.0 -1.000000e-10    10.656714
+4  simple_centering          15  2.0            kmeans       maximum         pearson    0.702644   0.561481   0.597194  0.464918                 1.0 -1.000000e-10     7.989524
+5  simple_centering          15  2.5            kmeans       maximum         pearson    0.702644   0.561481   0.597194  0.464918                 1.0 -1.000000e-10     7.698097
+
+Top 5 runs by test_mae:
+      normalization  n_clusters    m clustering_method defuzz_method neighbor_method  train_rmse  train_mae  test_rmse  test_mae  avg_max_membership   avg_entropy  elapsed_sec
+1  simple_centering          15  1.5            kmeans       maximum         pearson    0.702644   0.561481   0.597194  0.464918                 1.0 -1.000000e-10     9.245661
+2  simple_centering          15  1.5            kmeans           cog         pearson    0.702644   0.561481   0.597194  0.464918                 1.0 -1.000000e-10     8.531273
+3  simple_centering          15  2.0            kmeans           cog         pearson    0.702644   0.561481   0.597194  0.464918                 1.0 -1.000000e-10    10.656714
+4  simple_centering          15  2.0            kmeans       maximum         pearson    0.702644   0.561481   0.597194  0.464918                 1.0 -1.000000e-10     7.989524
+5  simple_centering          15  2.5            kmeans       maximum         pearson    0.702644   0.561481   0.597194  0.464918                 1.0 -1.000000e-10     7.698097
+

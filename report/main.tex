@@ -1,0 +1,124 @@
+
+\documentclass[12pt,a4paper,twoside,openany]{book} 
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel} 
+\usepackage{amsmath}
+\usepackage{inconsolata}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{graphicx} 
+\usepackage{wrapfig}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[paper=a4paper,margin=1in]{geometry} 
+\usepackage{titlesec}
+\usepackage{minted} 
+\usepackage{float}
+\usepackage[font=scriptsize, skip=5pt]{caption} 
+\usepackage[backend=biber, style=numeric, backref=true,defernumbers=true]{biblatex}
+\usepackage[immediate]{silence}
+\WarningFilter[temp]{latex}{Command} 
+\usepackage{sectsty}
+\usepackage{setspace}
+\DeactivateWarningFilters[temp] 
+\usepackage{hyperref} 
+\usepackage[font=small,labelfont=bf,justification=centering]{caption} 
+\usepackage{csquotes} 
+\usepackage[bottom]{footmisc} 
+\usepackage{ragged2e}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{svg}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
+\usepackage{hyperref} 
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{comment}
+\sisetup{group-separator={,}, group-minimum-digits=4}
+
+
+\hypersetup{
+colorlinks=false,
+pdfborderstyle={/S/U/W 0},
+}
+\def\noteEnabled{0}
+\def\questionEnabled{0}
+
+\input{Impostazioni/stile}
+\input{Impostazioni/comandi}
+
+
+\addbibresource{Bibliografia/bibliografia.bib} 
+
+\begin{document} 
+\pagenumbering{gobble} 
+
+\pagenumbering{gobble}
+\begin{center}
+\includegraphics[width=0.3\textwidth]{Immagini/logo_bicocca.png}\\
+
+\vspace*{2\baselineskip}
+{\huge \textbf{Sistemi Complessi e Incerti}}
+
+\vspace*{1\baselineskip}
+{\large \textbf{Approfondimento su Fuzzy Sets per Sistemi Incerti}}
+
+\vspace*{3\baselineskip}
+{\Large \textbf{Fuzzy Clustering per il Supporto alle Decisioni in Recommender System}}
+
+\vspace*{8\baselineskip}
+{\large \textbf{}}
+
+\begin{large}
+\vspace*{2\baselineskip}
+
+\emph{AA 2024/2025}
+
+\vspace*{2\baselineskip}
+
+\emph{di} \\
+{\Large \href{https://github.com/LilQuacky}{\faGithub{} Andrea Falbo} \par}
+{{ a.falbo7@campus.unimib.it}}\\ [1cm]
+
+\vspace*{1\baselineskip}
+{\large{\emph{Università degli Studi di Milano-Bicocca}}\par}
+
+\thispagestyle{empty}
+\end{large}
+\end{center}
+
+\pagebreak
+
+
+
+\tableofcontents 
+
+\newpage 
+
+\pagenumbering{arabic} 
+
+\setcounter{chapter}{0} 
+
+\input{Capitoli/cap1}
+\input{Capitoli/cap2}
+\input{Capitoli/cap3}
+\input{Capitoli/cap4}
+\input{Capitoli/cap5}
+
+\appendix
+\input{Appendici/app1}
+
+\backmatter
+\sloppy 
+\printbibliography[heading=bibintoc, title=Bibliografia]
+
+\newpage 
+
+
+\end{document} 

@@ -10,7 +10,7 @@ import json
 import os
 
 if __name__ == "__main__":
-    config_path = "config/config.json"
+    config_path = "config/sample.json"
     with open(config_path, 'r') as f:
         config = json.load(f)
 

@@ -1,0 +1,32 @@
+Top 5 runs by train_rmse:
+      normalization  n_clusters    m clustering_method defuzz_method neighbor_method  train_rmse  train_mae  test_rmse  test_mae  avg_max_membership   avg_entropy  elapsed_sec
+1  simple_centering           8  1.5               fcm           cog         pearson    3.869835   3.786491   3.882016  3.793139            0.273718  1.845628e+00     9.955480
+2   minmax_per_user           8  1.5               fcm           cog         pearson    3.949780   3.866262   3.815734  3.741367            0.271811  1.847042e+00    15.257416
+3  no_normalization           8  1.5               fcm           cog         pearson    3.949780   3.866262   3.815734  3.741367            0.271811  1.847042e+00    14.884205
+4   zscore_per_user           8  1.5               fcm           cog         pearson    3.949780   3.866262   3.815734  3.741367            0.271811  1.847042e+00    14.915545
+5  simple_centering           8  2.0            kmeans           cog         pearson    3.989409   3.898448   4.058326  3.991584            1.000000 -1.000000e-10     4.519470
+
+Top 5 runs by train_mae:
+      normalization  n_clusters    m clustering_method defuzz_method neighbor_method  train_rmse  train_mae  test_rmse  test_mae  avg_max_membership   avg_entropy  elapsed_sec
+1  simple_centering           8  1.5               fcm           cog         pearson    3.869835   3.786491   3.882016  3.793139            0.273718  1.845628e+00     9.955480
+2   minmax_per_user           8  1.5               fcm           cog         pearson    3.949780   3.866262   3.815734  3.741367            0.271811  1.847042e+00    15.257416
+3  no_normalization           8  1.5               fcm           cog         pearson    3.949780   3.866262   3.815734  3.741367            0.271811  1.847042e+00    14.884205
+4   zscore_per_user           8  1.5               fcm           cog         pearson    3.949780   3.866262   3.815734  3.741367            0.271811  1.847042e+00    14.915545
+5  simple_centering           8  2.0            kmeans           cog         pearson    3.989409   3.898448   4.058326  3.991584            1.000000 -1.000000e-10     4.519470
+
+Top 5 runs by test_rmse:
+      normalization  n_clusters    m clustering_method defuzz_method neighbor_method  train_rmse  train_mae  test_rmse  test_mae  avg_max_membership   avg_entropy  elapsed_sec
+1   minmax_per_user           8  1.5               fcm           cog         pearson     3.94978   3.866262   3.815734  3.741367            0.271811  1.847042e+00    15.257416
+2   zscore_per_user           8  1.5               fcm           cog         pearson     3.94978   3.866262   3.815734  3.741367            0.271811  1.847042e+00    14.915545
+3  no_normalization           8  1.5               fcm           cog         pearson     3.94978   3.866262   3.815734  3.741367            0.271811  1.847042e+00    14.884205
+4  no_normalization           4  1.5            kmeans           cog            none     4.04448   3.936788   3.816145  3.703522            1.000000 -1.000000e-10     0.012245
+5   minmax_per_user           4  2.0            kmeans       maximum            none     4.04448   3.936788   3.816145  3.703522            1.000000 -1.000000e-10     0.013336
+
+Top 5 runs by test_mae:
+      normalization  n_clusters    m clustering_method defuzz_method neighbor_method  train_rmse  train_mae  test_rmse  test_mae  avg_max_membership   avg_entropy  elapsed_sec
+1   zscore_per_user           4  1.5            kmeans       maximum            none     4.04448   3.936788   3.816145  3.703522                 1.0 -1.000000e-10     0.012880
+2   minmax_per_user           4  2.5            kmeans       maximum            none     4.04448   3.936788   3.816145  3.703522                 1.0 -1.000000e-10     0.013162
+3   zscore_per_user           4  2.0            kmeans           cog            none     4.04448   3.936788   3.816145  3.703522                 1.0 -1.000000e-10     0.012756
+4   zscore_per_user           4  2.5            kmeans       maximum            none     4.04448   3.936788   3.816145  3.703522                 1.0 -1.000000e-10     0.012661
+5  no_normalization           4  2.0            kmeans       maximum            none     4.04448   3.936788   3.816145  3.703522                 1.0 -1.000000e-10     0.010905
+

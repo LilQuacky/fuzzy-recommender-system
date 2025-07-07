@@ -24,9 +24,15 @@ class DataManager:
         R_test_aligned = R_test.reindex(columns=R_train.columns, fill_value=np.nan)
         return R_train, R_test_aligned
 
-    def normalize(self, R_train, R_test_aligned):
-        R_train_norm = R_train.astype(float)
-        R_test_norm = R_test_aligned.astype(float)
+    def normalize(self, R_train, R_test_aligned, norm_func=None):
+        if norm_func is not None:
+            R_train_norm = norm_func(R_train)
+            R_test_norm = norm_func(R_test_aligned)
+        else:
+            R_train_norm = R_train.astype(float)
+            R_test_norm = R_test_aligned.astype(float)
+        
+        # Fill dei valori mancanti
         global_mean = R_train_norm.stack().mean()
         R_train_filled = R_train_norm.apply(lambda row: row.fillna(row.mean() if not np.isnan(row.mean()) else global_mean), axis=1)
         R_test_filled = R_test_norm.apply(lambda row: row.fillna(row.mean() if not np.isnan(row.mean()) else global_mean), axis=1)

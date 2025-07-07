@@ -1,0 +1,32 @@
+Top 5 runs by train_rmse:
+      normalization  n_clusters    m clustering_method defuzz_method neighbor_method  train_rmse  train_mae  test_rmse  test_mae  avg_max_membership  avg_entropy  elapsed_sec
+1  simple_centering          12  2.2               fcm           cog         pearson    0.684010   0.538256   0.605307  0.475381            0.083333     2.484907    22.421374
+2  simple_centering           8  1.8               fcm       maximum         pearson    0.691397   0.548004   0.604812  0.474834            0.125000     2.079442    25.523322
+3  simple_centering          12  2.0               fcm           cog         pearson    0.694862   0.546261   0.606882  0.475262            0.083333     2.484907    25.458260
+4  simple_centering           6  1.5               fcm       maximum         pearson    0.695546   0.550535   0.603353  0.474161            0.166667     1.791759    20.568909
+5  simple_centering          10  1.8               fcm       maximum         pearson    0.695546   0.550535   0.603353  0.474161            0.100000     2.302585    45.524321
+
+Top 5 runs by train_mae:
+      normalization  n_clusters    m clustering_method defuzz_method neighbor_method  train_rmse  train_mae  test_rmse  test_mae  avg_max_membership  avg_entropy  elapsed_sec
+1  simple_centering          12  2.2               fcm           cog         pearson    0.684010   0.538256   0.605307  0.475381            0.083333     2.484907    22.421374
+2  simple_centering          12  2.0               fcm           cog         pearson    0.694862   0.546261   0.606882  0.475262            0.083333     2.484907    25.458260
+3  simple_centering           8  1.8               fcm       maximum         pearson    0.691397   0.548004   0.604812  0.474834            0.125000     2.079442    25.523322
+4  simple_centering          12  2.2               fcm       maximum         pearson    0.697415   0.549484   0.598088  0.469887            0.083333     2.484907    18.544516
+5  simple_centering          12  1.8               fcm       maximum         pearson    0.700689   0.550375   0.601741  0.472974            0.083333     2.484907    19.324488
+
+Top 5 runs by test_rmse:
+      normalization  n_clusters    m clustering_method defuzz_method neighbor_method  train_rmse  train_mae  test_rmse  test_mae  avg_max_membership  avg_entropy  elapsed_sec
+1  simple_centering          12  2.0               fcm       maximum         pearson    0.710300   0.563109   0.593641  0.468432            0.083333     2.484907    18.929855
+2  simple_centering           6  2.2               fcm       maximum         pearson    0.709981   0.566095   0.595051  0.467561            0.166667     1.791759    17.769995
+3  simple_centering          12  2.2               fcm       maximum         pearson    0.697415   0.549484   0.598088  0.469887            0.083333     2.484907    18.544516
+4  simple_centering          10  1.5               fcm       maximum         pearson    0.699772   0.554122   0.598246  0.470507            0.100000     2.302585    25.801746
+5  simple_centering          12  1.8               fcm           cog         pearson    0.697556   0.551777   0.600087  0.470968            0.083333     2.484907    21.827408
+
+Top 5 runs by test_mae:
+      normalization  n_clusters    m clustering_method defuzz_method neighbor_method  train_rmse  train_mae  test_rmse  test_mae  avg_max_membership  avg_entropy  elapsed_sec
+1  simple_centering           6  2.2               fcm       maximum         pearson    0.709981   0.566095   0.595051  0.467561            0.166667     1.791759    17.769995
+2  simple_centering          12  2.0               fcm       maximum         pearson    0.710300   0.563109   0.593641  0.468432            0.083333     2.484907    18.929855
+3  simple_centering          12  2.2               fcm       maximum         pearson    0.697415   0.549484   0.598088  0.469887            0.083333     2.484907    18.544516
+4  simple_centering          10  1.5               fcm       maximum         pearson    0.699772   0.554122   0.598246  0.470507            0.100000     2.302585    25.801746
+5  simple_centering          12  1.8               fcm           cog         pearson    0.697556   0.551777   0.600087  0.470968            0.083333     2.484907    21.827408
+

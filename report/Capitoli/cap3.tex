@@ -1,0 +1,562 @@
+\chapter{Implementazione del Sistema}
+\label{chap:chap3}
+
+\section{Architettura del Sistema}
+
+Il sistema di raccomandazione fuzzy è stato implementato seguendo un'architettura modulare e scalabile, progettata per supportare esperimenti sistematici e riproducibili. L'architettura è organizzata in quattro livelli principali:
+
+\begin{itemize}
+    \item \textbf{Livello di Configurazione}: Gestione centralizzata dei parametri sperimentali
+    \item \textbf{Livello di Orchestrazione}: Coordinamento del flusso di esecuzione degli esperimenti
+    \item \textbf{Livello di Elaborazione}: Componenti per clustering, valutazione e visualizzazione
+    \item \textbf{Livello di Utilità}: Funzioni di supporto per caricamento, preprocessamento e normalizzazione
+\end{itemize}
+
+\subsection{Struttura del Progetto}
+
+La scelta di utilizzare directory separate per configurazioni, dati, output e codice è motivata dalla necessità di:
+\begin{itemize}
+    \item \textbf{Versioning}: Tracciare le modifiche alle configurazioni
+    \item \textbf{Reproducibilità}: Mantenere i dati originali separati dai risultati
+    \item \textbf{Organizzazione}: Facilitare la navigazione e la comprensione del progetto
+    \item \textbf{Scalabilità}: Supportare l'aggiunta di nuovi dataset e algoritmi
+\end{itemize}
+
+Il progetto è organizzato in moduli specializzati:
+
+\begin{verbatim}
+fuzzy-recommender-system/
+├── config/                 # Configurazioni JSON
+├── datasets/               # Dataset MovieLens
+├── output/                 # Risultati e visualizzazioni
+├── runner/                 # Orchestrazione esperimenti
+├── utils/                  # Componenti di elaborazione
+├── main.py                 # Punto di ingresso
+└── README.md              # Documentazione
+\end{verbatim}
+
+\section{Componenti Principali}
+
+\subsection{Configurazione Centralizzata}
+
+Il sistema utilizza un file di configurazione JSON centralizzato (\texttt{config/config.json}) che controlla tutti gli aspetti dell'esperimento:
+
+\begin{lstlisting}[language=json, caption=Esempio di configurazione]
+{
+    "dataset_name": "ml-100k",
+    "normalizations": ["simple_centering", "zscore_per_user", 
+                      "minmax_per_user", "no_normalization"],
+    "cluster_values": [4, 6, 8],
+    "m_values": [1.5, 2.0, 2.5],
+    "clustering_methods": ["fcm", "kmeans"],
+    "defuzzification_methods": ["maximum", "cog"],
+    "neighbor_selection_methods": ["none", "pearson"],
+    "min_user_ratings": 150,
+    "min_item_ratings": 150,
+    "test_size": 0.2,
+    "max_iter": 3000,
+    "error": 1e-06
+}
+\end{lstlisting}
+
+Questa configurazione permette di:
+\begin{itemize}
+    \item Definire i parametri di clustering (numero di cluster, fuzziness)
+    \item Specificare i metodi di normalizzazione da testare
+    \item Configurare le strategie di defuzzificazione e selezione dei vicini
+    \item Controllare i parametri di preprocessamento e valutazione
+\end{itemize}
+
+\subsection{Orchestrazione degli Esperimenti}
+
+La classe \texttt{Runner} rappresenta il componente centrale di orchestrazione:
+
+\begin{lstlisting}[language=Python, caption=Classe Runner - Gestione del flusso sperimentale]
+class Runner:
+    def __init__(self, config_path):
+        self.config = ConfigManager(config_path).load()
+        # Inizializzazione directory di output con timestamp
+        timestamp_format = self.config.get("run_timestamp_format", 
+                                         "run_%Y_%m_%d_%H_%M_%S")
+        run_timestamp = datetime.now().strftime(timestamp_format)
+        base_output_dir = os.path.join(self.config.get("output_dir", "output"), 
+                                      run_timestamp)
+        
+        # Setup directory per risultati e immagini
+        self.config["images_dir"] = os.path.join(base_output_dir, 
+                                                self.config.get("images_subdir", "images"))
+        self.config["results_dir"] = os.path.join(base_output_dir, 
+                                                 self.config.get("results_subdir", "results"))
+        
+        self.data_manager = DataManager(self.config)
+        self.result_manager = ResultManager(self.config)
+\end{lstlisting}
+
+Il \texttt{Runner} gestisce:
+\begin{itemize}
+    \item Caricamento della configurazione
+    \item Creazione di directory timestampate per i risultati
+    \item Esecuzione di tutti i combinazioni di parametri
+    \item Salvataggio dei risultati e configurazioni
+\end{itemize}
+
+\section{Gestione dei Dati}
+
+\subsection{Caricamento e Preprocessamento}
+
+Il \texttt{DataManager} gestisce il caricamento e la preparazione dei dataset:
+
+\begin{lstlisting}[language=Python, caption=DataManager - Gestione dati]
+class DataManager:
+    def load_and_preprocess(self):
+        # Caricamento dataset specifico
+        if self.config.get('dataset_name', 'ml-100k') == 'ml-1m':
+            _, R = load_data_1m()
+        else:
+            _, R = load_data_100k()
+        
+        # Filtro per utenti e item densi
+        R_dense = filter_dense(R, 
+                              self.config['min_user_ratings'], 
+                              self.config['min_item_ratings'])
+        
+        # Split train/test per utente
+        R_train, R_test = split_train_test_per_user(
+            R_dense, 
+            test_size=self.config['test_size'], 
+            random_state=self.config['random_state']
+        )
+        
+        # Allineamento del test set
+        R_test_aligned = R_test.reindex(columns=R_train.columns, 
+                                       fill_value=np.nan)
+        return R_train, R_test_aligned
+\end{lstlisting}
+
+\subsection{Strategie di Normalizzazione}
+
+Il sistema implementa quattro strategie di normalizzazione nel modulo \texttt{normalizer.py}:
+
+
+\begin{enumerate}
+    \item \textbf{Simple Centering}: Sottrazione della media per utente
+    \begin{lstlisting}[language=Python]
+def simple_centering(R):
+    user_means = R.mean(axis=1)
+    return R.subtract(user_means, axis=0).astype(float)
+    \end{lstlisting}
+    
+    \item \textbf{Z-score per utente}: Normalizzazione z-score individuale
+    \begin{lstlisting}[language=Python]
+def zscore_per_user(R):
+    R_norm = R.copy()
+    for user in R_norm.index:
+        user_ratings = R_norm.loc[user].dropna()
+        if len(user_ratings) > 1 and user_ratings.std() > 0:
+            mean_val = user_ratings.mean()
+            std_val = user_ratings.std()
+            R_norm.loc[user] = (R_norm.loc[user] - mean_val) / std_val
+    return R_norm.fillna(0).astype(float)
+    \end{lstlisting}
+    
+    \item \textbf{Min-Max per utente}: Scaling min-max individuale
+    \begin{lstlisting}[language=Python]
+def minmax_per_user(R):
+    R_norm = R.copy()
+    for user in R_norm.index:
+        user_ratings = R_norm.loc[user].dropna()
+        if len(user_ratings) > 1:
+            min_val = user_ratings.min()
+            max_val = user_ratings.max()
+            if max_val > min_val:
+                R_norm.loc[user] = (R_norm.loc[user] - min_val) / (max_val - min_val)
+    return R_norm.astype(float).fillna(0)
+    \end{lstlisting}
+    
+    \item \textbf{Nessuna normalizzazione}: Mantenimento dei valori originali
+\end{enumerate}
+
+\subsubsection{Simple Centering}
+La normalizzazione \textit{Simple Centering} sottrae la media delle valutazioni di ogni utente da tutte le sue valutazioni. Questo processo centra i dati attorno allo zero per ogni utente, eliminando le differenze sistematiche nelle scale di valutazione tra utenti diversi. Ad esempio, se un utente ha valutazioni [3, 4, 5], la media è 4, quindi le valutazioni normalizzate diventano [-1, 0, 1].
+
+\subsubsection{Z-score per utente}
+La normalizzazione \textit{Z-score per utente} applica la standardizzazione z-score individualmente per ogni utente. Calcola la media e la deviazione standard delle valutazioni di ogni utente, poi trasforma ogni valutazione sottraendo la media e dividendo per la deviazione standard. Questo approccio normalizza non solo la scala ma anche la variabilità delle valutazioni, rendendo i dati più comparabili tra utenti con diverse abitudini di valutazione.
+
+\subsubsection{Min-Max per utente}
+La normalizzazione \textit{Min-Max per utente} scala le valutazioni di ogni utente nell'intervallo [0,1]. Trova il valore minimo e massimo delle valutazioni di ogni utente, poi applica la formula (valore - min) / (max - min). Questo approccio preserva la distribuzione relativa delle valutazioni di ogni utente mentre le normalizza in un intervallo standardizzato.
+
+\subsubsection{Nessuna normalizzazione}
+L'opzione \textit{Nessuna normalizzazione} mantiene i valori originali delle valutazioni senza alcuna trasformazione. Questo approccio è utile quando si vuole preservare completamente la scala e la distribuzione originale dei dati, assumendo che le differenze nelle scale di valutazione tra utenti non siano un problema significativo per l'algoritmo di raccomandazione.
+
+
+\section{Algoritmi di Clustering}
+
+Il sistema implementa due algoritmi di clustering principali per la segmentazione degli utenti:
+
+\subsection{Fuzzy C-Means (FCM)}
+L'algoritmo Fuzzy C-Means è stato scelto come metodo principale per la sua capacità di gestire l'incertezza nelle assegnazioni degli utenti ai cluster. A differenza del K-Means tradizionale, FCM assegna a ogni utente un grado di membership (valore tra 0 e 1) per ogni cluster, riflettendo la natura sfumata delle preferenze degli utenti. Questo approccio è particolarmente adatto ai sistemi di raccomandazione dove gli utenti possono avere gusti ibridi o appartenere parzialmente a più categorie.
+
+L'implementazione del Fuzzy C-Means utilizza la libreria \texttt{skfuzzy}:
+
+\begin{lstlisting}[language=Python, caption=Implementazione FCM]
+def fcm_cluster(self, X, n_clusters, m, error, max_iter, seed):
+    cntr, u, _, _, _, _, _ = fuzz.cmeans(
+        data=X.T,           # Trasposizione per skfuzzy
+        c=n_clusters,       # Numero di cluster
+        m=m,                # Parametro di fuzziness
+        error=error,        # Criterio di convergenza
+        maxiter=max_iter,   # Iterazioni massime
+        seed=seed           # Seed per riproducibilità
+    )
+    return cntr, u
+\end{lstlisting}
+
+\subsection{K-Means}
+L'algoritmo K-Means è stato incluso come baseline per confronto, implementando clustering hard dove ogni utente appartiene esclusivamente a un singolo cluster. Questo approccio tradizionale serve come punto di riferimento per valutare i benefici dell'approccio fuzzy, permettendo di quantificare l'impatto della gestione dell'incertezza nelle assegnazioni dei cluster.
+
+Di seguito viene fornita l'implementazione del K-Means standard:
+
+\begin{lstlisting}[language=Python, caption=Implementazione K-Means]
+def kmeans_cluster(self, X, n_clusters, seed):
+    kmeans = sklearn.cluster.KMeans(n_clusters=n_clusters, 
+                                   random_state=seed)
+    labels = kmeans.fit_predict(X)
+    cntr = kmeans.cluster_centers_
+    
+    # Conversione in matrice di membership (one-hot)
+    u = np.zeros((n_clusters, X.shape[0]))
+    u[labels, np.arange(X.shape[0])] = 1
+    return cntr, u
+\end{lstlisting}
+
+\subsection{Predizione delle Rating}
+La predizione delle rating è necessario nei sistemi di  raccomandazione fuzzy in quanto, dopo aver ottenuto i cluster degli utenti attraverso gli algoritmi di clustering, il sistema utilizza i centroidi dei cluster e le membership degli utenti per generare le predizioni delle rating mancanti.
+
+Il processo di predizione segue questi passaggi:
+
+\begin{enumerate}
+    \item \textbf{Calcolo dei Centroidi}: I centroidi rappresentano il profilo medio di preferenze per ogni cluster
+    \item \textbf{Utilizzo delle Membership}: Le membership fuzzy determinano quanto ogni utente contribuisce a ciascun cluster
+    \item \textbf{Predizione Pesata}: Le predizioni finali sono calcolate come media pesata dei centroidi, dove i pesi sono le membership
+\end{enumerate}
+
+L'algoritmo di predizione combina le informazioni dei cluster con le membership fuzzy per ottenere predizioni più accurate rispetto ai metodi tradizionali. La natura fuzzy del sistema permette di catturare le sfumature nelle preferenze degli utenti, dove un utente può appartenere parzialmente a più cluster contemporaneamente.
+
+\begin{lstlisting}[language=Python, caption=Algoritmo di predizione]
+def predict(self, cntr, membership):
+    n_clusters, n_users = membership.shape
+    n_items = cntr.shape[1]
+    pred = np.zeros((n_users, n_items))
+    
+    for c in range(n_clusters):
+        weights = membership[c, :]  # Membership per cluster c
+        pred += np.outer(weights, cntr[c, :])  # Prodotto esterno
+    
+    return pred
+\end{lstlisting}
+
+\section{Strategie di Defuzzificazione}
+
+Le strategie di defuzzificazione sono componenti fondamentali nei sistemi fuzzy che convertono le membership fuzzy (valori continui tra 0 e 1) in decisioni discrete o valori crisp. Nel contesto del sistema di raccomandazione fuzzy, queste strategie servono a:
+
+\begin{itemize}
+    \item \textbf{Interpretazione dei Risultati}: Convertire le membership fuzzy in assegnazioni di cluster comprensibili
+    \item \textbf{Decisioni Finali}: Determinare a quale cluster appartiene effettivamente ogni utente
+    \item \textbf{Valutazione delle Performance}: Permettere il confronto con algoritmi di clustering hard
+    \item \textbf{Analisi dei Cluster}: Facilitare l'interpretazione dei profili di preferenza degli utenti
+\end{itemize}
+
+Le membership fuzzy rappresentano il grado di appartenenza di ogni utente a ciascun cluster, dove valori più alti indicano una maggiore affinità. Tuttavia, per molte applicazioni pratiche e per la valutazione delle performance, è necessario convertire queste membership continue in assegnazioni discrete.
+
+Il sistema implementa due strategie principali di defuzzificazione:
+
+\begin{enumerate}
+    \item \textbf{Metodo del Massimo}: Assegna ogni utente al cluster con membership massima, approccio più conservativo che privilegia la certezza
+    \item \textbf{Center of Gravity (COG)}: Calcola un indice continuo come media pesata delle membership, mantenendo parzialmente la natura fuzzy
+\end{enumerate}
+
+\subsection{Metodo del Massimo}
+
+Il metodo del massimo assegna ogni utente al cluster con membership massima. Questo approccio è più conservativo e privilegia la certezza, ma può essere utilizzato per generare assegnazioni discrete.
+
+
+\begin{lstlisting}[language=Python, caption=Defuzzificazione per massimo]
+def defuzzify_maximum(membership):
+    return np.argmax(membership, axis=0)
+\end{lstlisting}
+
+\subsection{Center of Gravity (COG)}
+
+Il metodo Center of Gravity (COG) calcola un indice continuo come media pesata delle membership. Questo approccio mantiene parzialmente la natura fuzzy, permettendo di bilanciare tra precisione e necessità di decisioni discrete.
+
+\begin{lstlisting}[language=Python, caption=Defuzzificazione COG]
+def defuzzify_cog(membership):
+    cluster_indices = np.arange(membership.shape[0]).reshape(-1, 1)
+    cog = np.sum(membership * cluster_indices, axis=0) / np.sum(membership, axis=0)
+    return cog
+\end{lstlisting}
+
+\section{Selezione dei Vicini}
+
+La selezione dei vicini è una strategia opzionale che permette di filtrare gli utenti candidati per il calcolo delle raccomandazioni basandosi su criteri di similarità. Questa fase è fondamentale per:
+
+\begin{itemize}
+    \item \textbf{Migliorare la Qualità}: Considerare solo utenti con preferenze simili
+    \item \textbf{Ridurre il Rumore}: Eliminare utenti con gusti troppo diversi
+    \item \textbf{Ottimizzare le Performance}: Ridurre il numero di calcoli necessari
+    \item \textbf{Personalizzare le Raccomandazioni}: Adattare le predizioni al profilo specifico dell'utente
+\end{itemize}
+
+Il sistema supporta due modalità di selezione:
+
+\begin{enumerate}
+    \item \textbf{Nessuna Selezione}: Considera tutti gli utenti nel cluster, approccio più inclusivo ma potenzialmente rumoroso
+    \item \textbf{Correlazione di Pearson}: Filtra gli utenti basandosi sulla correlazione delle loro valutazioni, approccio più selettivo che privilegia la similarità
+\end{enumerate}
+
+La scelta tra queste modalità dipende dal trade-off tra inclusività e precisione delle raccomandazioni.
+
+
+\subsection{Correlazione di Pearson}
+
+La selezione dei vicini basata sulla correlazione di Pearson è una strategia che filtra gli utenti candidati per il calcolo delle raccomandazioni basandosi sulla similarità delle loro valutazioni. Questo approccio è particolarmente utile per:
+
+\begin{itemize}
+    \item \textbf{Migliorare la Qualità}: Considerare solo utenti con preferenze simili
+    \item \textbf{Ridurre il Rumore}: Eliminare utenti con gusti troppo diversi
+    \item \textbf{Ottimizzare le Performance}: Ridurre il numero di calcoli necessari
+    \item \textbf{Personalizzare le Raccomandazioni}: Adattare le predizioni al profilo specifico dell'utente
+\end{itemize}
+
+\begin{lstlisting}[language=Python, caption=Selezione vicini Pearson]
+def select_pearson_neighbors(user_vector, candidate_matrix, threshold=0.5):
+    indices = []
+    pearson_values = []
+    
+    for idx, candidate in enumerate(candidate_matrix):
+        mask = ~np.isnan(user_vector) & ~np.isnan(candidate)
+        if np.sum(mask) < 2:
+            continue
+        
+        r_tuple = pearsonr(user_vector[mask], candidate[mask])
+        r = r_tuple[0]
+        
+        if not isinstance(r, (float, int)) or np.isnan(r):
+            continue
+        
+        if r > threshold:
+            indices.append(idx)
+            pearson_values.append(r)
+    
+    return np.array(indices), np.array(pearson_values)
+\end{lstlisting}
+
+\section{Valutazione delle Performance}
+
+La sezione "Valutazione delle Performance" è fondamentale per misurare l'efficacia del sistema di raccomandazione fuzzy implementato. Questa sezione serve a:
+
+\begin{itemize}
+    \item \textbf{Quantificare l'Accuratezza}: Misurare quanto bene il sistema predice le valutazioni degli utenti
+    \item \textbf{Confrontare Configurazioni}: Valutare diverse combinazioni di parametri (normalizzazioni, metodi di clustering, valori di fuzziness)
+    \item \textbf{Validare l'Approccio}: Verificare che l'utilizzo della logica fuzzy migliori le performance rispetto a metodi tradizionali
+    \item \textbf{Ottimizzare i Parametri}: Identificare le configurazioni ottimali per diversi scenari
+    \item \textbf{Assicurare Riproducibilità}: Fornire metriche standardizzate per confronti futuri
+\end{itemize}
+
+Le metriche utilizzate (RMSE e MAE) permettono di:
+\begin{itemize}
+    \item \textbf{RMSE (Root Mean Square Error)}: Penalizza maggiormente gli errori grandi, utile per identificare predizioni molto inaccurate
+    \item \textbf{MAE (Mean Absolute Error)}: Fornisce una misura più robusta degli errori, meno sensibile agli outlier
+\end{itemize}
+
+La valutazione viene eseguita su dati di test separati per garantire una stima imparziale delle performance del modello.
+
+
+\subsection{Metriche di Valutazione}
+
+Il sistema utilizza due metriche principali per valutare le performance del modello di raccomandazione:
+
+\begin{itemize}
+    \item \textbf{RMSE (Root Mean Square Error)}: Calcola la radice quadrata dell'errore quadratico medio, penalizzando maggiormente gli errori di predizione più grandi. È particolarmente utile per identificare quando il sistema produce raccomandazioni molto inaccurate.
+    
+    \item \textbf{MAE (Mean Absolute Error)}: Calcola l'errore assoluto medio, fornendo una misura più robusta e meno sensibile agli outlier rispetto al RMSE.
+\end{itemize}
+
+Entrambe le metriche vengono calcolate ignorando i valori mancanti (NaN) e vengono tracciate sia durante il training che durante il testing per monitorare:
+\begin{itemize}
+    \item \textbf{Training}: L'andamento dell'apprendimento del modello e la convergenza degli algoritmi di clustering
+    \item \textbf{Testing}: Le performance effettive del modello su dati non visti, fornendo una stima imparziale della capacità di generalizzazione
+\end{itemize}
+
+\begin{lstlisting}[language=Python, caption=Calcolo metriche di valutazione]
+def evaluate(self, y_true, y_pred):
+    y_true = np.array(y_true, dtype=np.float64)
+    y_pred = np.array(y_pred, dtype=np.float64)
+    
+    # Maschera per valori validi
+    mask = ~np.isnan(y_true) & ~np.isnan(y_pred)
+    
+    mse = mean_squared_error(y_true[mask], y_pred[mask])
+    mae = mean_absolute_error(y_true[mask], y_pred[mask])
+    
+    return np.sqrt(mse), mae
+\end{lstlisting}
+
+\subsection{Denormalizzazione}
+
+La denormalizzazione è una fase cruciale per convertire le predizioni normalizzate in valori reali che possono essere interpretati e utilizzati nelle applicazioni pratiche. Questo processo è necessario per:
+\begin{itemize}
+    \item \textbf{Rendere le Predizioni Comprendibili}: Convertire i valori normalizzati in scale originali
+    \item \textbf{Valutare le Performance}: Calcolare metriche reali come RMSE e MAE
+    \item \textbf{Personalizzare le Raccomandazioni}: Adattare le predizioni al contesto specifico dell'utente
+\end{itemize}
+
+\begin{lstlisting}[language=Python, caption=Denormalizzazione]
+def denormalize(self, pred_norm, R):
+    means = R.mean(axis=1).values.reshape(-1, 1)
+    return pred_norm + means
+\end{lstlisting}
+
+\section{Visualizzazione dei Risultati}
+
+La visualizzazione dei risultati è una parte essenziale per comprendere e comunicare i risultati del sistema di raccomandazione fuzzy. Questa sezione serve a:
+
+\begin{itemize}
+    \item \textbf{Comprendere i Risultati}: Visualizzare i cluster e le preferenze degli utenti
+    \item \textbf{Comunicare i Risultati}: Presentare i risultati in modo chiaro e comprensibile
+    \item \textbf{Validare le Performance}: Verificare che le raccomandazioni siano accurate e pertinenti
+    \item \textbf{Ottimizzare i Parametri}: Identificare le configurazioni ottimali per diversi scenari
+    \item \textbf{Assicurare Riproducibilità}: Fornire visualizzazioni standardizzate per confronti futuri
+\end{itemize}
+
+\subsection{Plotter Modulare}
+
+Il sistema include un modulo di visualizzazione completo (\texttt{Plotter.py}) che genera:
+
+\begin{enumerate}
+    \item \textbf{Cluster PCA}: Visualizzazione 2D dei cluster utente
+    \item \textbf{Istogrammi di Membership}: Distribuzione dei valori di membership massimi
+    \item \textbf{Heatmap di Membership}: Matrice di membership per utenti incerti
+    \item \textbf{Confronti tra Normalizzazioni}: Plot riassuntivo con PCA, Max Membership e Data Distribution
+\end{enumerate}
+
+\begin{lstlisting}[language=Python, caption=Esempio di visualizzazione cluster]
+def plot_clusters(self, R_scaled, membership, prefix=None):
+    # PCA per riduzione dimensionale
+    pca = PCA(n_components=2)
+    reduced = pca.fit_transform(R_scaled)
+    cluster_labels = np.argmax(membership, axis=0)
+    
+    plt.figure(figsize=(8, 6))
+    scatter = plt.scatter(reduced[:, 0], reduced[:, 1], 
+                         c=cluster_labels, cmap='Set1', alpha=0.7)
+    plt.title("User Clusters (Fuzzy C-Means)")
+    plt.xlabel("PCA Component 1")
+    plt.ylabel("PCA Component 2")
+    plt.colorbar(scatter, label='Cluster Label')
+\end{lstlisting}
+
+\subsection{Aggregazione dei Risultati}
+
+Il modulo \texttt{aggregate\_plotter.py} genera visualizzazioni comparative:
+
+\begin{itemize}
+    \item \textbf{Barplot Top-N}: Migliori configurazioni per ogni metrica
+    \item \textbf{Heatmap}: Performance per cluster e normalizzazione
+    \item \textbf{Boxplot}: Distribuzione delle metriche per metodo di clustering
+    \item \textbf{Summary}: File di testo con i migliori risultati
+\end{itemize}
+
+\section{Flusso di Esecuzione}
+
+\subsection{Pipeline Sperimentale}
+
+Il flusso completo di un esperimento è:
+
+\begin{enumerate}
+    \item \textbf{Caricamento Configurazione}: Lettura parametri da JSON
+    \item \textbf{Preparazione Dati}: Caricamento, filtro, split train/test
+    \item \textbf{Loop Parametri}: Per ogni combinazione di:
+        \begin{itemize}
+            \item Normalizzazione
+            \item Numero di cluster
+            \item Parametro di fuzziness
+            \item Metodo di clustering
+            \item Strategia di defuzzificazione
+            \item Selezione vicini
+        \end{itemize}
+    \item \textbf{Clustering}: Applicazione algoritmo selezionato
+    \item \textbf{Predizione}: Calcolo rating predetti
+    \item \textbf{Valutazione}: Calcolo RMSE e MAE
+    \item \textbf{Visualizzazione}: Generazione grafici
+    \item \textbf{Salvataggio}: Risultati e configurazioni
+\end{enumerate}
+
+\subsection{Gestione degli Errori}
+
+Il sistema include gestione robusta degli errori:
+
+\begin{lstlisting}[language=Python, caption=Gestione errori nella predizione]
+def predict_with_pearson_neighbors(self, R, cluster_assignments, threshold=0.5):
+    n_users, n_items = R.shape
+    pred = np.full((n_users, n_items), np.nan)
+    
+    for user_idx in range(n_users):
+        user_vector = R[user_idx]
+        user_cluster = cluster_assignments[user_idx]
+        
+        # Trova utenti nello stesso cluster
+        same_cluster_mask = (cluster_assignments == user_cluster)
+        same_cluster_mask[user_idx] = False
+        candidate_matrix = R[same_cluster_mask]
+        
+        if candidate_matrix.shape[0] == 0:
+            continue  # Nessun candidato disponibile
+            
+        neighbor_indices, _ = select_pearson_neighbors(
+            user_vector, candidate_matrix, threshold=threshold)
+        
+        if len(neighbor_indices) == 0:
+            continue  # Nessun vicino trovato
+            
+        neighbors = candidate_matrix[neighbor_indices]
+        with np.errstate(all='ignore'):
+            pred[user_idx] = np.nanmean(neighbors, axis=0)
+    
+    return pred
+\end{lstlisting}
+
+\section{Scelte Progettuali}
+
+\subsection{Modularità e Estensibilità}
+
+Il sistema è progettato per essere facilmente estendibile:
+
+\begin{itemize}
+    \item \textbf{Configurazione JSON}: Facile aggiunta di nuovi parametri
+    \item \textbf{Interfacce Modulari}: Nuovi algoritmi possono essere aggiunti implementando interfacce standard
+    \item \textbf{Separazione Responsabilità}: Ogni classe ha una responsabilità specifica
+    \item \textbf{Plugin Architecture}: Nuove strategie di normalizzazione, clustering, defuzzificazione possono essere aggiunte dinamicamente
+\end{itemize}
+
+\subsection{Riproducibilità}
+
+Il sistema garantisce riproducibilità completa:
+
+\begin{itemize}
+    \item \textbf{Seed Control}: Controllo esplicito dei seed per tutti gli algoritmi random
+    \item \textbf{Configurazione Salvata}: Ogni run salva la configurazione completa
+    \item \textbf{Timestamp Directory}: Organizzazione automatica dei risultati
+    \item \textbf{Versioning}: Tracciamento delle modifiche alla configurazione
+\end{itemize}
+
+\subsection{Performance e Scalabilità}
+
+Ottimizzazioni implementate:
+
+\begin{itemize}
+    \item \textbf{Vectorizzazione NumPy}: Operazioni vettorizzate per efficienza
+    \item \textbf{Gestione Memoria}: Caricamento lazy dei dataset
+    \item \textbf{Parallelizzazione Potenziale}: Struttura modulare permette parallelizzazione futura
+    \item \textbf{Caching}: Risultati intermedi possono essere salvati
+\end{itemize}
