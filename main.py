@@ -10,11 +10,11 @@ import json
 import os
 
 if __name__ == "__main__":
-    config_path = "config/sample.json"
+    config_path = "config/kmeans.json"
     with open(config_path, 'r') as f:
         config = json.load(f)
 
-    if config.get("summary_only", True):
+    if config.get("summary_only"):
         print("Running only the aggregator")
         from utils.aggregate_plotter import main as aggregate_main
         output_dir = config["output_dir"]

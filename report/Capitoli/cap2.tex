@@ -1,7 +1,7 @@
 \chapter{Fondamenti Teorici}
 \label{chap:chap2}
 
-\section{Parte I: Fuzzy Logic e Clustering}
+\section{Parte I: Logica Fuzzy e Clustering}
 
 \subsection{Insiemi Fuzzy}
 
@@ -47,6 +47,8 @@ J_m = \sum_{i=1}^{N} \sum_{j=1}^{C} u_{ij}^m \cdot \|x_i - c_j\|^2
 
 dove $u_{ij}$ è il grado di appartenenza dell’elemento $x_i$ al centro $c_j$, e $m > 1$ è il parametro di fuzzificazione. L’algoritmo aggiorna iterativamente i centroidi e le appartenenze per ottenere una partizione fuzzy dei dati.
 
+Il parametro di fuzzificazione $m$ controlla la "morbidezza" della partizione: per $m \rightarrow 1$ il clustering tende a diventare più rigido, simile al K-Means classico, mentre per valori crescenti di $m$ l'appartenenza degli oggetti ai cluster diventa più uniforme. Valori tipici di $m$ sono compresi tra 1.5 e 2.5~\cite{BEZDEK1984191}.
+
 
 \section{Parte II: Sistemi di Raccomandazione}
 
@@ -56,7 +58,7 @@ I \textit{sistemi di raccomandazione} sono stati introdotti nel 1992 da Goldberg
 
 \subsubsection{Classificazione}
 
-Una delle classificazioni dei sistemi di raccomandazione più popolari è quella proposta da Bobadilla et al.~\cite{21}, che distingue:
+Una delle classificazioni dei sistemi di raccomandazione più popolari è quella proposta da Bobadilla et al.~\cite{bobadilla2013recommender}, che distingue:
 
 \begin{itemize}
     \item \textbf{Filtraggio demografico}: utilizza attributi dell’utente (es. età, sesso, localizzazione) per identificare preferenze simili tra utenti con caratteristiche comuni~\cite{bobadilla2013recommender, zhao2014we}.
@@ -146,5 +148,3 @@ L’uso del clustering nei sistemi di raccomandazione consente di:
     \item mitigare il problema della sparsità;
     \item selezionare i vicini tra gli utenti dello stesso cluster, migliorando la coerenza del filtraggio.
 \end{itemize}
-
-

@@ -1,0 +1,1685 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.6.13)  10 JUL 2025 14:07
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**c:/Users/Utente/Desktop/fuzzy-recommender-system/report/main.tex
+(c:/Users/Utente/Desktop/fuzzy-recommender-system/report/main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
+Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/base\bk12.clo
+File: bk12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@chapter=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count196
+\U@D=\dimen141
+\l@unhyphenated=\language79
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count197
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/babel-italian\italian.ldf
+Language: italian 2024/10/10 v.1.5.01 Italian support for the babel system
+\it@lettering=\count198
+\it@doublequoteactive=\count199
+\it@ISOcompliance=\count266
+)) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/it\babel-italian.tex
+Package babel Info: Importing font and identification data for italian
+(babel)             from babel-it.ini. Reported on input line 11.
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count267
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen142
+)) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen143
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count268
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count269
+\leftroot@=\count270
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count271
+\DOTSCASE@=\count272
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count273
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count274
+\dotsspace@=\muskip16
+\c@parentequation=\count275
+\dspbrk@lvl=\count276
+\tag@help=\toks20
+\row@=\count277
+\column@=\count278
+\maxfields@=\count279
+\andhelp@=\toks21
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
+\@envbody=\toks22
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\inconsolata.sty
+Package: inconsolata 2019/05/17 v1.12
+ `inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks24
+\XKV@tempa@toks=\toks25
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\keyval.tex))
+\XKV@depth=\count280
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\zifour@ocount=\count281
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks26
+\thm@bodyfont=\toks27
+\thm@headfont=\toks28
+\thm@notefont=\toks29
+\thm@headpunct=\toks30
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
+\dth@everypar=\toks31
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/bbm\bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen151
+\Gin@req@width=\dimen152
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
+\wrapoverhang=\dimen153
+\WF@size=\dimen154
+\c@WF@wrappedlines=\count282
+\WF@box=\box53
+\WF@everypar=\toks32
+Package: wrapfig 2003/01/31  v 3.6
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen155
+\ar@mcellbox=\box54
+\extrarowheight=\dimen156
+\NC@list=\toks33
+\extratabsurround=\skip56
+\backup@length=\skip57
+\ar@cellbox=\box55
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count283
+\Gm@cntv=\count284
+\c@Gm@tempcnt=\count285
+\Gm@bindingoffset=\dimen157
+\Gm@wd@mp=\dimen158
+\Gm@odd@mp=\dimen159
+\Gm@even@mp=\dimen160
+\Gm@layoutwidth=\dimen161
+\Gm@layoutheight=\dimen162
+\Gm@layouthoffset=\dimen163
+\Gm@layoutvoffset=\dimen164
+\Gm@dimlist=\toks34
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box56
+\beforetitleunit=\skip58
+\aftertitleunit=\skip59
+\ttl@plus=\dimen165
+\ttl@minus=\dimen166
+\ttl@toksa=\toks35
+\titlewidth=\dimen167
+\titlewidthlast=\dimen168
+\titlewidthfirst=\dimen169
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/minted\minted.sty
+Package: minted 2025/05/14 v3.7.0 Yet another Pygments shim for LaTeX
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/catchfile\catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/fvextra\fvextra.sty
+Package: fvextra 2025/05/29 v1.13.2 fvextra - extensions and patches for fancyvrb
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
+\FV@CodeLineNo=\count286
+\FV@InFile=\read3
+\FV@TabBox=\box57
+\c@FancyVerbLine=\count287
+\FV@StepNumber=\count288
+\FV@OutFile=\write3
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.sty
+Package: lineno 2025/05/13 line numbers on paragraphs v5.5
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+\linenopenalty=\count289
+\output=\toks36
+\linenoprevgraf=\count290
+\linenumbersep=\dimen170
+\linenumberwidth=\dimen171
+\c@linenumber=\count291
+\c@pagewiselinenumber=\count292
+\c@LN@truepage=\count293
+\c@internallinenumber=\count294
+\c@internallinenumbers=\count295
+\quotelinenumbersep=\dimen172
+\bframerule=\dimen173
+\bframesep=\dimen174
+\bframebox=\box58
+\@LN@amsmath@ams@eqpen=\count296
+)
+\c@FancyVerbWriteLine=\count297
+\c@FancyVerbBufferLine=\count298
+\c@FV@TrueTabGroupLevel=\count299
+\c@FV@TrueTabCounter=\count300
+\FV@TabBox@Group=\box59
+\FV@bgcolorstructbox=\box60
+\FV@TmpLength=\skip60
+\c@FV@HighlightLinesStart=\count301
+\c@FV@HighlightLinesStop=\count302
+\FV@LoopCount=\count303
+\FV@NCharsBox=\box61
+\FV@BreakIndent=\dimen175
+\FV@BreakIndentNChars=\count304
+\FV@BreakSymbolSepLeft=\dimen176
+\FV@BreakSymbolSepLeftNChars=\count305
+\FV@BreakSymbolSepRight=\dimen177
+\FV@BreakSymbolSepRightNChars=\count306
+\FV@BreakSymbolIndentLeft=\dimen178
+\FV@BreakSymbolIndentLeftNChars=\count307
+\FV@BreakSymbolIndentRight=\dimen179
+\FV@BreakSymbolIndentRightNChars=\count308
+\c@FancyVerbLineBreakLast=\count309
+\FV@LineBox=\box62
+\FV@LineIndentBox=\box63
+\c@FV@BreakBufferDepth=\count310
+\FV@LineWidth=\dimen180
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/latex2pydata\latex2pydata.sty
+Package: latex2pydata 2025/03/26 v0.6.0 latex2pydata - write data to file in Python literal format
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks37
+\pgfkeys@temptoks=\toks38
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks39
+))) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/pgfopts\pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks40
+\pgfopts@list@add@b@toks=\toks41
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count311
+\float@exts=\toks42
+\float@box=\box64
+\@float@everytoks=\toks43
+\@floatcapt=\box65
+)
+\c@minted@FancyVerbLineTemp=\count312
+\@float@every@listing=\toks44
+\c@listing=\count313
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen181
+\captionmargin=\dimen182
+\caption@leftmargin=\dimen183
+\caption@rightmargin=\dimen184
+\caption@width=\dimen185
+\caption@indent=\dimen186
+\caption@parindent=\dimen187
+\caption@hangindent=\dimen188
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count314
+\c@continuedfloat=\count315
+Package caption Info: float package is loaded.
+Package caption Info: wrapfig package is loaded.
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count316
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count317
+\c@listtotal=\count318
+\c@listcount=\count319
+\c@liststart=\count320
+\c@liststop=\count321
+\c@citecount=\count322
+\c@citetotal=\count323
+\c@multicitecount=\count324
+\c@multicitetotal=\count325
+\c@instcount=\count326
+\c@maxnames=\count327
+\c@minnames=\count328
+\c@maxitems=\count329
+\c@minitems=\count330
+\c@citecounter=\count331
+\c@maxcitecounter=\count332
+\c@savedcitecounter=\count333
+\c@uniquelist=\count334
+\c@uniquename=\count335
+\c@refsection=\count336
+\c@refsegment=\count337
+\c@maxextratitle=\count338
+\c@maxextratitleyear=\count339
+\c@maxextraname=\count340
+\c@maxextradate=\count341
+\c@maxextraalpha=\count342
+\c@abbrvpenalty=\count343
+\c@highnamepenalty=\count344
+\c@lownamepenalty=\count345
+\c@maxparens=\count346
+\c@parenlevel=\count347
+\blx@tempcnta=\count348
+\blx@tempcntb=\count349
+\blx@tempcntc=\count350
+\c@blx@maxsection=\count351
+\blx@maxsegment@0=\count352
+\blx@notetype=\count353
+\blx@parenlevel@text=\count354
+\blx@parenlevel@foot=\count355
+\blx@sectionciteorder@0=\count356
+\blx@sectionciteorderinternal@0=\count357
+\blx@entrysetcounter=\count358
+\blx@biblioinstance=\count359
+\labelnumberwidth=\skip61
+\labelalphawidth=\skip62
+\biblabelsep=\skip63
+\bibitemsep=\skip64
+\bibnamesep=\skip65
+\bibinitsep=\skip66
+\bibparsep=\skip67
+\bibhang=\skip68
+\blx@bcfin=\read4
+\blx@bcfout=\write4
+\blx@langwohyphens=\language80
+\c@mincomprange=\count360
+\c@maxcomprange=\count361
+\c@mincompwidth=\count362
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'numeric.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count363
+\c@savedafterword=\count364
+\c@annotator=\count365
+\c@savedannotator=\count366
+\c@author=\count367
+\c@savedauthor=\count368
+\c@bookauthor=\count369
+\c@savedbookauthor=\count370
+\c@commentator=\count371
+\c@savedcommentator=\count372
+\c@editor=\count373
+\c@savededitor=\count374
+\c@editora=\count375
+\c@savededitora=\count376
+\c@editorb=\count377
+\c@savededitorb=\count378
+\c@editorc=\count379
+\c@savededitorc=\count380
+\c@foreword=\count381
+\c@savedforeword=\count382
+\c@holder=\count383
+\c@savedholder=\count384
+\c@introduction=\count385
+\c@savedintroduction=\count386
+\c@namea=\count387
+\c@savednamea=\count388
+\c@nameb=\count389
+\c@savednameb=\count390
+\c@namec=\count391
+\c@savednamec=\count392
+\c@translator=\count393
+\c@savedtranslator=\count394
+\c@shortauthor=\count395
+\c@savedshortauthor=\count396
+\c@shorteditor=\count397
+\c@savedshorteditor=\count398
+\c@labelname=\count399
+\c@savedlabelname=\count400
+\c@institution=\count401
+\c@savedinstitution=\count402
+\c@lista=\count403
+\c@savedlista=\count404
+\c@listb=\count405
+\c@savedlistb=\count406
+\c@listc=\count407
+\c@savedlistc=\count408
+\c@listd=\count409
+\c@savedlistd=\count410
+\c@liste=\count411
+\c@savedliste=\count412
+\c@listf=\count413
+\c@savedlistf=\count414
+\c@location=\count415
+\c@savedlocation=\count416
+\c@organization=\count417
+\c@savedorganization=\count418
+\c@origlocation=\count419
+\c@savedoriglocation=\count420
+\c@origpublisher=\count421
+\c@savedorigpublisher=\count422
+\c@publisher=\count423
+\c@savedpublisher=\count424
+\c@language=\count425
+\c@savedlanguage=\count426
+\c@origlanguage=\count427
+\c@savedoriglanguage=\count428
+\c@pageref=\count429
+\c@savedpageref=\count430
+\shorthandwidth=\skip69
+\shortjournalwidth=\skip70
+\shortserieswidth=\skip71
+\shorttitlewidth=\skip72
+\shortauthorwidth=\skip73
+\shorteditorwidth=\skip74
+\locallabelnumberwidth=\skip75
+\locallabelalphawidth=\skip76
+\localshorthandwidth=\skip77
+\localshortjournalwidth=\skip78
+\localshortserieswidth=\skip79
+\localshorttitlewidth=\skip80
+\localshortauthorwidth=\skip81
+\localshorteditorwidth=\skip82
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+File: blx-compat.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+\c@textcitecount=\count431
+\c@textcitetotal=\count432
+\c@textcitemaxnames=\count433
+\c@biburlbigbreakpenalty=\count434
+\c@biburlbreakpenalty=\count435
+\c@biburlnumpenalty=\count436
+\c@biburlucpenalty=\count437
+\c@biburllcpenalty=\count438
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count439
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
+File: numeric.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
+File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count440
+\c@bbx:relatedtotal=\count441
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cbx
+File: numeric.cbx 2023/03/05 v3.19 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-01-04 L3 programming layer (loader) 
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count442
+\l__pdf_internal_box=\box66
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2024-01-04 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
+Package: xparse 2023-10-10 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
+)) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/silence\silence.sty
+Package: silence 2012/07/02 v1.5b Selective filtering of warnings and error messages
+\sl@Save=\count443
+\sl@StateNumber=\count444
+\sl@MessageCount=\count445
+\sl@Casualties=\count446
+\sl@Filter=\toks45
+\sl@Message=\toks46
+\sl@UnexpandedMessage=\toks47
+\sl@Mess@ge=\toks48
+\sl@WarningCount=\count447
+\sl@WarningNumber=\count448
+\sl@WarningCasualties=\count449
+\sl@TempBOW=\toks49
+\sl@BankOfWarnings=\toks50
+LaTeX Info: Redefining \GenericWarning on input line 433.
+\sl@ErrorCount=\count450
+\sl@ErrorNumber=\count451
+\sl@ErrorCasualties=\count452
+\sl@TempBOE=\toks51
+\sl@BankOfErrors=\toks52
+LaTeX Info: Redefining \GenericError on input line 601.
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/sectsty\sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading styles
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count453
+)
+\@linkdim=\dimen189
+\Hy@linkcounter=\count454
+\Hy@pagecounter=\count455
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count456
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4181.
+Package hyperref Info: Link nesting OFF on input line 4186.
+Package hyperref Info: Hyper index ON on input line 4189.
+Package hyperref Info: Plain pages OFF on input line 4196.
+Package hyperref Info: Backreferencing OFF on input line 4201.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4448.
+\c@Hy@tempcnt=\count457
+LaTeX Info: Redefining \url on input line 4786.
+\XeTeXLinkMargin=\dimen190
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count458
+\Field@Width=\dimen191
+\Fld@charsize=\dimen192
+Package hyperref Info: Hyper figures OFF on input line 6065.
+Package hyperref Info: Link nesting OFF on input line 6070.
+Package hyperref Info: Hyper index ON on input line 6073.
+Package hyperref Info: backreferencing OFF on input line 6080.
+Package hyperref Info: Link coloring OFF on input line 6085.
+Package hyperref Info: Link coloring with OCG OFF on input line 6090.
+Package hyperref Info: PDF/A mode OFF on input line 6095.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count459
+\c@Item=\count460
+\c@Hfootnote=\count461
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2023-11-26 v7.01g Hyperref driver for pdfTeX
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count462
+\c@bookmark@seq@number=\count463
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip83
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+\csq@reset=\count464
+\csq@gtype=\count465
+\csq@glevel=\count466
+\csq@qlevel=\count467
+\csq@maxlvl=\count468
+\csq@tshold=\count469
+\csq@ltx@everypar=\toks53
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
+File: csquotes.cfg 
+)) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/footmisc\footmisc.sty
+Package: footmisc 2025/05/09 v7.0b a miscellany of footnote facilities
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/footmisc\footmisc-2022-02-14.sty
+Package: footmisc 2024/12/24 v6.0g a miscellany of footnote facilities
+\FN@temptoken=\toks54
+\footnotemargin=\dimen193
+\@outputbox@depth=\dimen194
+Package footmisc Info: Declaring symbol style bringhurst on input line 699.
+Package footmisc Info: Declaring symbol style chicago on input line 707.
+Package footmisc Info: Declaring symbol style wiley on input line 716.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 727.
+Package footmisc Info: Declaring symbol style lamport* on input line 747.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 768.
+)) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.sty
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip84
+\RaggedLeftLeftskip=\skip85
+\RaggedRightLeftskip=\skip86
+\CenteringRightskip=\skip87
+\RaggedLeftRightskip=\skip88
+\RaggedRightRightskip=\skip89
+\CenteringParfillskip=\skip90
+\RaggedLeftParfillskip=\skip91
+\RaggedRightParfillskip=\skip92
+\JustifyingParfillskip=\skip93
+\CenteringParindent=\skip94
+\RaggedLeftParindent=\skip95
+\RaggedRightParindent=\skip96
+\JustifyingParindent=\skip97
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count470
+\lst@gtempboxa=\box67
+\lst@token=\toks55
+\lst@length=\count471
+\lst@currlwidth=\dimen195
+\lst@column=\count472
+\lst@pos=\count473
+\lst@lostspace=\dimen196
+\lst@width=\dimen197
+\lst@newlines=\count474
+\lst@lineno=\count475
+\lst@maxwidth=\dimen198
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count476
+\lst@skipnumbers=\count477
+\lst@framebox=\box68
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen199
+\lightrulewidth=\dimen256
+\cmidrulewidth=\dimen257
+\belowrulesep=\dimen258
+\belowbottomsep=\dimen259
+\aboverulesep=\dimen260
+\abovetopsep=\dimen261
+\cmidrulesep=\dimen262
+\cmidrulekern=\dimen263
+\defaultaddspace=\dimen264
+\@cmidla=\count478
+\@cmidlb=\count479
+\@aboverulesep=\dimen265
+\@belowrulesep=\dimen266
+\@thisruleclass=\count480
+\@lastruleclass=\count481
+\@thisrulewidth=\dimen267
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/svg\svg.sty
+Package: svg 2020/11/26 v2.02k (include SVG pictures)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.sty
+Package: scrbase 2025/06/04 v3.45 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.sty
+Package: scrlfile 2025/06/04 v3.45 KOMA-Script package (file load hooks)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-hook.sty
+Package: scrlfile-hook 2025/06/04 v3.45 KOMA-Script package (using LaTeX hooks)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.sty
+Package: scrlogo 2025/06/04 v3.45 KOMA-Script package (logo)
+)))
+Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\c@svg@param@lastpage=\count482
+\svg@box=\box69
+\c@svg@param@currpage=\count483
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transparent.sty
+Package: transparent 2022-10-27 v1.5 Transparency with color stacks
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transparent-nometadata.sty
+Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color stack (HO)
+)) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks56
+\pgfutil@tempdima=\dimen268
+\pgfutil@tempdimb=\dimen269
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box70
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+\pgf@x=\dimen270
+\pgf@y=\dimen271
+\pgf@xa=\dimen272
+\pgf@ya=\dimen273
+\pgf@xb=\dimen274
+\pgf@yb=\dimen275
+\pgf@xc=\dimen276
+\pgf@yc=\dimen277
+\pgf@xd=\dimen278
+\pgf@yd=\dimen279
+\w@pgf@writea=\write5
+\r@pgf@reada=\read5
+\c@pgf@counta=\count484
+\c@pgf@countb=\count485
+\c@pgf@countc=\count486
+\c@pgf@countd=\count487
+\t@pgf@toka=\toks57
+\t@pgf@tokb=\toks58
+\t@pgf@tokc=\toks59
+\pgf@sys@id@count=\count488
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+))) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count489
+\pgfsyssoftpath@bigbuffer@items=\count490
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip98
+\subfigcapskip=\skip99
+\subfigcaptopadj=\dimen280
+\subfigbottomskip=\skip100
+\subfigcapmargin=\dimen281
+\subfiglabelskip=\skip101
+\c@subfigure=\count491
+\c@lofdepth=\count492
+\c@subtable=\count493
+\c@lotdepth=\count494
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.cfg)
+\subfig@top=\skip102
+\subfig@bottom=\skip103
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+\f@nch@headwidth=\skip104
+\f@nch@offset@elh=\skip105
+\f@nch@offset@erh=\skip106
+\f@nch@offset@olh=\skip107
+\f@nch@offset@orh=\skip108
+\f@nch@offset@elf=\skip109
+\f@nch@offset@erf=\skip110
+\f@nch@offset@olf=\skip111
+\f@nch@offset@orf=\skip112
+\f@nch@height=\skip113
+\f@nch@footalignment=\skip114
+\f@nch@widthL=\skip115
+\f@nch@widthC=\skip116
+\f@nch@widthR=\skip117
+\@temptokenb=\toks60
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome\fontawesome.sty
+Package: fontawesome 2016/05/15 v4.6.3.1 font awesome icons
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome\fontawesomesymbols-generic.tex) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome\fontawesomesymbols-pdftex.tex)) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2025-05-22 v3.4.12 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count495
+\l__siunitx_number_exponent_fixed_int=\count496
+\l__siunitx_number_min_decimal_int=\count497
+\l__siunitx_number_min_integer_int=\count498
+\l__siunitx_number_round_precision_int=\count499
+\l__siunitx_number_lower_threshold_int=\count500
+\l__siunitx_number_upper_threshold_int=\count501
+\l__siunitx_number_group_first_int=\count502
+\l__siunitx_number_group_size_int=\count503
+\l__siunitx_number_group_minimum_int=\count504
+\l__siunitx_angle_tmp_dim=\dimen282
+\l__siunitx_angle_marker_box=\box71
+\l__siunitx_angle_unit_box=\box72
+\l__siunitx_compound_count_int=\count505
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/translations\translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
+)
+\l__siunitx_table_tmp_box=\box73
+\l__siunitx_table_tmp_dim=\dimen283
+\l__siunitx_table_column_width_dim=\dimen284
+\l__siunitx_table_integer_box=\box74
+\l__siunitx_table_decimal_box=\box75
+\l__siunitx_table_uncert_box=\box76
+\l__siunitx_table_before_box=\box77
+\l__siunitx_table_after_box=\box78
+\l__siunitx_table_before_dim=\dimen285
+\l__siunitx_table_carry_dim=\dimen286
+\l__siunitx_unit_tmp_int=\count506
+\l__siunitx_unit_position_int=\count507
+\l__siunitx_unit_total_int=\count508
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/comment\comment.sty
+\CommentStream=\write6
+ Excluding comment 'comment')
+Package hyperref Info: Option `colorlinks' set `false' on input line 49.
+ (Impostazioni/stile.tex) (Impostazioni/comandi.tex
+\c@QuestionCounter=\count509
+\c@NoteCounter=\count510
+\c@AlgorithmCounter=\count511
+\c@CodeCounter=\count512
+\c@proteorema=\count513
+\c@prolemma=\count514
+\c@prodefinizione=\count515
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'italian'.
+ (main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Info: Redefining \it@ocap on input line 59.
+LaTeX Info: Redefining \it@ccap on input line 59.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count516
+\scratchdimen=\dimen287
+\scratchbox=\box79
+\nofMPsegments=\count517
+\nofMParguments=\count518
+\everyMPshowfont=\toks61
+\MPscratchCnt=\count519
+\MPscratchDim=\dimen288
+\MPnumerator=\count520
+\makeMPintoPDFobject=\count521
+\everyMPtoPDFconversion=\toks62
+) (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-31.8738pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=88.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=42.67912pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: subfigure package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package biblatex Info: Trying to load language 'italian'...
+Package biblatex Info: ... file 'italian.lbx' found.
+(C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\italian.lbx
+File: italian.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout4 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' not found.
+
+No file main.bbl.
+Package biblatex Info: Reference section=0 on input line 59.
+Package biblatex Info: Reference segment=0 on input line 59.
+Package hyperref Info: Link coloring OFF on input line 59.
+\@outlinefile=\write7
+\openout7 = `main.out'.
+
+\c@lstlisting=\count522
+Package translations Info: no dictionary file `translations-basic-dictionary-italian.trsl' found. on input line 59.
+<Immagini/logo_bicocca.png, id=6, 1030.85126pt x 1112.155pt>
+File: Immagini/logo_bicocca.png Graphic file (type png)
+<use Immagini/logo_bicocca.png>
+Package pdftex.def Info: Immagini/logo_bicocca.png  used on input line 64.
+(pdftex.def)             Requested size: 135.89174pt x 146.60466pt.
+LaTeX Font Info:    Trying to load font information for U+fontawesometwo on input line 86.
+(C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome\ufontawesometwo.fd
+File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
+) [1
+
+{C:/Users/Utente/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome/fontawesometwo.enc} <./Immagini/logo_bicocca.png>]
+No file main.toc.
+\tf@toc=\write8
+\openout8 = `main.toc'.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.102 \newpage
+               [2
+
+] (Capitoli/cap1.tex
+Capitolo 1.
+
+LaTeX Warning: Citation 'Goguen_1973' on page 1 undefined on input line 4.
+
+
+LaTeX Warning: Citation '554776b9726f44c582f01d870cefd26b' on page 1 undefined on input line 6.
+
+
+LaTeX Warning: Citation 'EKEL2006179' on page 1 undefined on input line 6.
+
+
+Overfull \hbox (56.08963pt too wide) in paragraph at lines 6--7
+\T1/cmr/m/n/12 uten-ti, ba-san-do-si sul-le lo-ro pre-fe-ren-ze espli-ci-te o im-pli-ci-te [[]].
+ []
+
+
+LaTeX Warning: Citation 'KOOHI2016134' on page 1 undefined on input line 8.
+
+
+LaTeX Warning: Hyper reference `chap:chap2' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `chap:chap2' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Hyper reference `chap:chap3' on page 1 undefined on input line 16.
+
+
+LaTeX Warning: Reference `chap:chap3' on page 1 undefined on input line 16.
+
+
+LaTeX Warning: Hyper reference `chap:chap4' on page 1 undefined on input line 17.
+
+
+LaTeX Warning: Reference `chap:chap4' on page 1 undefined on input line 17.
+
+
+LaTeX Warning: Hyper reference `chap:chap5' on page 1 undefined on input line 18.
+
+
+LaTeX Warning: Reference `chap:chap5' on page 1 undefined on input line 18.
+
+
+LaTeX Warning: Hyper reference `chap:chap6' on page 1 undefined on input line 19.
+
+
+LaTeX Warning: Reference `chap:chap6' on page 1 undefined on input line 19.
+
+) (Capitoli/cap2.tex [1
+
+]
+Capitolo 2.
+
+LaTeX Warning: Citation 'Goguen_1973' on page 2 undefined on input line 8.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
+(C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 8.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+
+LaTeX Warning: Citation 'DUBOIS1997141' on page 2 undefined on input line 12.
+
+
+LaTeX Warning: Citation '890332' on page 2 undefined on input line 31.
+
+
+LaTeX Warning: Citation 'ZADEH1975199' on page 2 undefined on input line 31.
+
+[2
+
+]
+
+LaTeX Warning: Citation 'doi:10.1142/9789814261302_0022' on page 3 undefined on input line 34.
+
+
+Overfull \hbox (110.64156pt too wide) in paragraph at lines 34--35
+\T1/cmr/m/n/12 Una di-sci-pli-na emer-sa gra-zie agli in-sie-mi fuz-zy è la gra-nu-lar com-pu-ting [[]],
+ []
+
+
+LaTeX Warning: Citation 'dunn1973fuzzy' on page 3 undefined on input line 42.
+
+
+LaTeX Warning: Citation 'BEZDEK1984191' on page 3 undefined on input line 42.
+
+
+Overfull \hbox (14.87898pt too wide) in paragraph at lines 42--43
+[]\T1/cmr/m/n/12 Quel che si ot-tie-ne nel-la va-rian-te fuz-zy pren-de il no-me di \T1/cmr/m/it/12 Fuz-zy Clu-ste-ring \T1/cmr/m/n/12 [[]],
+ []
+
+
+LaTeX Warning: Citation 'BEZDEK1984191' on page 3 undefined on input line 50.
+
+
+LaTeX Warning: Citation '10.1145/138859.138867' on page 3 undefined on input line 57.
+
+
+LaTeX Warning: Citation 'burke2002hybrid' on page 3 undefined on input line 57.
+
+
+Overfull \hbox (50.08429pt too wide) in paragraph at lines 57--58
+\T1/cmr/m/n/12 I \T1/cmr/m/it/12 si-ste-mi di rac-co-man-da-zio-ne \T1/cmr/m/n/12 so-no sta-ti in-tro-dot-ti nel 1992 da Goldberg[[]].
+ []
+
+
+LaTeX Warning: Citation 'bobadilla2013recommender' on page 3 undefined on input line 61.
+
+[3]
+
+LaTeX Warning: Citation 'bobadilla2013recommender' on page 4 undefined on input line 64.
+
+
+LaTeX Warning: Citation 'zhao2014we' on page 4 undefined on input line 64.
+
+
+Overfull \hbox (111.20529pt too wide) in paragraph at lines 64--65
+\T1/cmr/m/n/12 ne) per iden-ti-fi-ca-re pre-fe-ren-ze si-mi-li tra uten-ti con ca-rat-te-ri-sti-che co-mu-ni [[],
+ []
+
+
+LaTeX Warning: Citation 'adomavicius2005toward' on page 4 undefined on input line 66.
+
+
+LaTeX Warning: Citation 'de2015semantics' on page 4 undefined on input line 68.
+
+
+LaTeX Warning: Citation 'lops2011content' on page 4 undefined on input line 68.
+
+
+Overfull \hbox (52.37381pt too wide) in paragraph at lines 68--69
+\T1/cmr/m/n/12 pro-fi-lo del-l'u-ten-te per rac-co-man-da-re ele-men-ti si-mi-li a quel-li già ap-prez-za-ti [[],
+ []
+
+
+LaTeX Warning: Citation 'vozalis2007using' on page 4 undefined on input line 70.
+
+
+LaTeX Warning: Citation 'balabanovic1997fab' on page 4 undefined on input line 70.
+
+
+LaTeX Warning: Citation 'burke2002hybrid' on page 4 undefined on input line 70.
+
+
+Overfull \hbox (37.46077pt too wide) in paragraph at lines 70--71
+\T1/cmr/m/n/12 gra-fi-co [[]], o col-la-bo-ra-ti-vo e ba-sa-to sul con-te-nu-to [[]].
+ []
+
+
+LaTeX Warning: Citation 'adomavicius2005toward' on page 4 undefined on input line 75.
+
+
+LaTeX Warning: Citation 'LU20121' on page 4 undefined on input line 77.
+
+[4] [5]) (Capitoli/cap3.tex [6]
+Capitolo 3.
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 4.
+(C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\t1zi4.fd
+File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
+)
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 12.0pt on input line 4.
+<../output/eda/before_cut/before_ratings_per_user_hist.png, id=80, 722.7pt x 361.35pt>
+File: ../output/eda/before_cut/before_ratings_per_user_hist.png Graphic file (type png)
+<use ../output/eda/before_cut/before_ratings_per_user_hist.png>
+Package pdftex.def Info: ../output/eda/before_cut/before_ratings_per_user_hist.png  used on input line 19.
+(pdftex.def)             Requested size: 217.42265pt x 108.70909pt.
+<../output/eda/after_cut/after_ratings_per_user_hist.png, id=81, 722.7pt x 361.35pt>
+File: ../output/eda/after_cut/after_ratings_per_user_hist.png Graphic file (type png)
+<use ../output/eda/after_cut/after_ratings_per_user_hist.png>
+Package pdftex.def Info: ../output/eda/after_cut/after_ratings_per_user_hist.png  used on input line 20.
+(pdftex.def)             Requested size: 217.42265pt x 108.70909pt.
+<../output/eda/before_cut/before_ratings_per_item_hist.png, id=82, 722.7pt x 361.35pt>
+File: ../output/eda/before_cut/before_ratings_per_item_hist.png Graphic file (type png)
+<use ../output/eda/before_cut/before_ratings_per_item_hist.png>
+Package pdftex.def Info: ../output/eda/before_cut/before_ratings_per_item_hist.png  used on input line 26.
+(pdftex.def)             Requested size: 217.42265pt x 108.70909pt.
+<../output/eda/after_cut/after_ratings_per_item_hist.png, id=83, 722.7pt x 361.35pt>
+File: ../output/eda/after_cut/after_ratings_per_item_hist.png Graphic file (type png)
+<use ../output/eda/after_cut/after_ratings_per_item_hist.png>
+Package pdftex.def Info: ../output/eda/after_cut/after_ratings_per_item_hist.png  used on input line 27.
+(pdftex.def)             Requested size: 217.42265pt x 108.70909pt.
+ [7
+
+{C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-t1-0.enc} <../output/eda/before_cut/before_ratings_per_user_hist.png> <../output/eda/after_cut/after_ratings_per_user_hist.png>]
+<../output/eda/before_cut/before_rating_distribution.png, id=97, 578.16pt x 361.35pt>
+File: ../output/eda/before_cut/before_rating_distribution.png Graphic file (type png)
+<use ../output/eda/before_cut/before_rating_distribution.png>
+Package pdftex.def Info: ../output/eda/before_cut/before_rating_distribution.png  used on input line 36.
+(pdftex.def)             Requested size: 271.7835pt x 169.86209pt.
+<../output/eda/after_cut/after_rating_distribution.png, id=98, 578.16pt x 361.35pt>
+File: ../output/eda/after_cut/after_rating_distribution.png Graphic file (type png)
+<use ../output/eda/after_cut/after_rating_distribution.png>
+Package pdftex.def Info: ../output/eda/after_cut/after_rating_distribution.png  used on input line 42.
+(pdftex.def)             Requested size: 271.7835pt x 169.86209pt.
+ [8 <../output/eda/before_cut/before_ratings_per_item_hist.png> <../output/eda/after_cut/after_ratings_per_item_hist.png> <../output/eda/before_cut/before_rating_distribution.png> <../output/eda/after_cut/after_rating_distribution.png>]
+<../output/eda/before_cut/before_ratings_per_user_box.png, id=112, 722.7pt x 361.35pt>
+File: ../output/eda/before_cut/before_ratings_per_user_box.png Graphic file (type png)
+<use ../output/eda/before_cut/before_ratings_per_user_box.png>
+Package pdftex.def Info: ../output/eda/before_cut/before_ratings_per_user_box.png  used on input line 53.
+(pdftex.def)             Requested size: 217.42265pt x 108.70909pt.
+<../output/eda/after_cut/after_ratings_per_user_box.png, id=113, 722.7pt x 361.35pt>
+File: ../output/eda/after_cut/after_ratings_per_user_box.png Graphic file (type png)
+<use ../output/eda/after_cut/after_ratings_per_user_box.png>
+Package pdftex.def Info: ../output/eda/after_cut/after_ratings_per_user_box.png  used on input line 54.
+(pdftex.def)             Requested size: 217.42265pt x 108.70909pt.
+<../output/eda/before_cut/before_ratings_per_item_box.png, id=114, 722.7pt x 361.35pt>
+File: ../output/eda/before_cut/before_ratings_per_item_box.png Graphic file (type png)
+<use ../output/eda/before_cut/before_ratings_per_item_box.png>
+Package pdftex.def Info: ../output/eda/before_cut/before_ratings_per_item_box.png  used on input line 60.
+(pdftex.def)             Requested size: 217.42265pt x 108.70909pt.
+<../output/eda/after_cut/after_ratings_per_item_box.png, id=115, 722.7pt x 361.35pt>
+File: ../output/eda/after_cut/after_ratings_per_item_box.png Graphic file (type png)
+<use ../output/eda/after_cut/after_ratings_per_item_box.png>
+Package pdftex.def Info: ../output/eda/after_cut/after_ratings_per_item_box.png  used on input line 61.
+(pdftex.def)             Requested size: 217.42265pt x 108.70909pt.
+<../output/eda/before_cut/before_sparsity_matrix.png, id=116, 1011.78pt x 578.16pt>
+File: ../output/eda/before_cut/before_sparsity_matrix.png Graphic file (type png)
+<use ../output/eda/before_cut/before_sparsity_matrix.png>
+Package pdftex.def Info: ../output/eda/before_cut/before_sparsity_matrix.png  used on input line 70.
+(pdftex.def)             Requested size: 217.42265pt x 124.24022pt.
+<../output/eda/after_cut/after_sparsity_matrix.png, id=117, 1011.78pt x 578.16pt>
+File: ../output/eda/after_cut/after_sparsity_matrix.png Graphic file (type png)
+<use ../output/eda/after_cut/after_sparsity_matrix.png>
+Package pdftex.def Info: ../output/eda/after_cut/after_sparsity_matrix.png  used on input line 71.
+(pdftex.def)             Requested size: 217.42265pt x 124.24022pt.
+<../output/eda/before_cut/before_user_correlation_heatmap.png, id=118, 1011.78pt x 722.7pt>
+File: ../output/eda/before_cut/before_user_correlation_heatmap.png Graphic file (type png)
+<use ../output/eda/before_cut/before_user_correlation_heatmap.png>
+Package pdftex.def Info: ../output/eda/before_cut/before_user_correlation_heatmap.png  used on input line 80.
+(pdftex.def)             Requested size: 217.42265pt x 155.30028pt.
+<../output/eda/after_cut/after_user_correlation_heatmap.png, id=119, 1011.78pt x 722.7pt>
+File: ../output/eda/after_cut/after_user_correlation_heatmap.png Graphic file (type png)
+<use ../output/eda/after_cut/after_user_correlation_heatmap.png>
+Package pdftex.def Info: ../output/eda/after_cut/after_user_correlation_heatmap.png  used on input line 81.
+(pdftex.def)             Requested size: 217.42265pt x 155.30028pt.
+ [9 <../output/eda/before_cut/before_ratings_per_user_box.png> <../output/eda/after_cut/after_ratings_per_user_box.png> <../output/eda/before_cut/before_ratings_per_item_box.png> <../output/eda/after_cut/after_ratings_per_item_box.png> <../output/eda/before_cut/before_sparsity_matrix.png> <../output/eda/after_cut/after_sparsity_matrix.png>]
+<../output/eda/before_cut/before_item_correlation_heatmap.png, id=135, 1011.78pt x 722.7pt>
+File: ../output/eda/before_cut/before_item_correlation_heatmap.png Graphic file (type png)
+<use ../output/eda/before_cut/before_item_correlation_heatmap.png>
+Package pdftex.def Info: ../output/eda/before_cut/before_item_correlation_heatmap.png  used on input line 87.
+(pdftex.def)             Requested size: 217.42265pt x 155.30028pt.
+<../output/eda/after_cut/after_item_correlation_heatmap.png, id=136, 1011.78pt x 722.7pt>
+File: ../output/eda/after_cut/after_item_correlation_heatmap.png Graphic file (type png)
+<use ../output/eda/after_cut/after_item_correlation_heatmap.png>
+Package pdftex.def Info: ../output/eda/after_cut/after_item_correlation_heatmap.png  used on input line 88.
+(pdftex.def)             Requested size: 217.42265pt x 155.30028pt.
+<../output/eda/before_cut/before_movies_per_genre.png, id=137, 1156.32pt x 578.16pt>
+File: ../output/eda/before_cut/before_movies_per_genre.png Graphic file (type png)
+<use ../output/eda/before_cut/before_movies_per_genre.png>
+Package pdftex.def Info: ../output/eda/before_cut/before_movies_per_genre.png  used on input line 97.
+(pdftex.def)             Requested size: 362.37569pt x 181.18623pt.
+) (Capitoli/cap4.tex [10 <../output/eda/before_cut/before_user_correlation_heatmap.png> <../output/eda/after_cut/after_user_correlation_heatmap.png> <../output/eda/before_cut/before_item_correlation_heatmap.png> <../output/eda/after_cut/after_item_correlation_heatmap.png> <../output/eda/before_cut/before_movies_per_genre.png>] [11]
+Capitolo 4.
+
+LaTeX Warning: Reference `chap:app2' on page 12 undefined on input line 4.
+
+[12
+
+]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 43.
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 11.0pt on input line 43.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 10.95pt on input line 76.
+LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
+(Font)              scaled to size 10.95pt on input line 77.
+ [13]
+Overfull \hbox (0.36577pt too wide) in paragraph at lines 109--111
+[][][][][][][][][][][][] 
+ []
+
+[14]
+LaTeX Font Info:    Trying to load font information for TS1+zi4 on input line 132.
+ (C:\Users\Utente\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\ts1zi4.fd
+File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
+)
+LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
+(Font)              scaled to size 10.95pt on input line 132.
+ [15{C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-ts1.enc}] [16]
+
+LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
+(Font)              using `T1/zi4/m/n' instead on input line 263.
+
+LaTeX Font Info:    Font shape `T1/zi4/m/it' will be
+(Font)              scaled to size 10.95pt on input line 263.
+[17]
+
+LaTeX Font Warning: Font shape `TS1/zi4/m/it' undefined
+(Font)              using `TS1/zi4/m/n' instead
+(Font)              for symbol `textquotesingle' on input line 268.
+
+[18] [19] [20]
+
+LaTeX Warning: Citation 'KOOHI2016134' on page 21 undefined on input line 444.
+
+[21]
+
+LaTeX Warning: Reference `tab:confronto_parametri' on page 22 undefined on input line 448.
+
+
+Overfull \hbox (150.27959pt too wide) in paragraph at lines 454--481
+ [][] 
+ []
+
+) (Capitoli/cap5.tex [22]
+Capitolo 5.
+[23
+
+] [24] [25] [26]
+<../output/run_sample/images/train/rmse/boxplot_train_rmse.png, id=493, 578.16pt x 433.62pt>
+File: ../output/run_sample/images/train/rmse/boxplot_train_rmse.png Graphic file (type png)
+<use ../output/run_sample/images/train/rmse/boxplot_train_rmse.png>
+Package pdftex.def Info: ../output/run_sample/images/train/rmse/boxplot_train_rmse.png  used on input line 200.
+(pdftex.def)             Requested size: 271.7835pt x 203.8345pt.
+<../output/run_sample/images/train/rmse/heatmap_train_rmse.png, id=494, 578.16pt x 433.62pt>
+File: ../output/run_sample/images/train/rmse/heatmap_train_rmse.png Graphic file (type png)
+<use ../output/run_sample/images/train/rmse/heatmap_train_rmse.png>
+Package pdftex.def Info: ../output/run_sample/images/train/rmse/heatmap_train_rmse.png  used on input line 206.
+(pdftex.def)             Requested size: 271.7835pt x 203.8345pt.
+ [27 <../output/run_sample/images/train/rmse/boxplot_train_rmse.png>]
+<../output/run_sample/images/train/precision/boxplot_train_precision.png, id=503, 578.16pt x 433.62pt>
+File: ../output/run_sample/images/train/precision/boxplot_train_precision.png Graphic file (type png)
+<use ../output/run_sample/images/train/precision/boxplot_train_precision.png>
+Package pdftex.def Info: ../output/run_sample/images/train/precision/boxplot_train_precision.png  used on input line 231.
+(pdftex.def)             Requested size: 271.7835pt x 203.8345pt.
+<../output/run_sample/images/train/recall/boxplot_train_recall.png, id=504, 578.16pt x 433.62pt>
+File: ../output/run_sample/images/train/recall/boxplot_train_recall.png Graphic file (type png)
+<use ../output/run_sample/images/train/recall/boxplot_train_recall.png>
+Package pdftex.def Info: ../output/run_sample/images/train/recall/boxplot_train_recall.png  used on input line 237.
+(pdftex.def)             Requested size: 271.7835pt x 203.8345pt.
+ [28 <../output/run_sample/images/train/rmse/heatmap_train_rmse.png> <../output/run_sample/images/train/precision/boxplot_train_precision.png>]
+<../output/run_sample/images/train/accuracy/boxplot_train_accuracy.png, id=515, 578.16pt x 433.62pt>
+File: ../output/run_sample/images/train/accuracy/boxplot_train_accuracy.png Graphic file (type png)
+<use ../output/run_sample/images/train/accuracy/boxplot_train_accuracy.png>
+Package pdftex.def Info: ../output/run_sample/images/train/accuracy/boxplot_train_accuracy.png  used on input line 243.
+(pdftex.def)             Requested size: 271.7835pt x 203.8345pt.
+<../output/run_sample/images/train/f1_score/boxplot_train_f1_score.png, id=516, 578.16pt x 433.62pt>
+File: ../output/run_sample/images/train/f1_score/boxplot_train_f1_score.png Graphic file (type png)
+<use ../output/run_sample/images/train/f1_score/boxplot_train_f1_score.png>
+Package pdftex.def Info: ../output/run_sample/images/train/f1_score/boxplot_train_f1_score.png  used on input line 249.
+(pdftex.def)             Requested size: 271.7835pt x 203.8345pt.
+ [29 <../output/run_sample/images/train/recall/boxplot_train_recall.png> <../output/run_sample/images/train/accuracy/boxplot_train_accuracy.png>]
+<../output/run_sample/images/test/rmse/boxplot_test_rmse.png, id=526, 578.16pt x 433.62pt>
+File: ../output/run_sample/images/test/rmse/boxplot_test_rmse.png Graphic file (type png)
+<use ../output/run_sample/images/test/rmse/boxplot_test_rmse.png>
+Package pdftex.def Info: ../output/run_sample/images/test/rmse/boxplot_test_rmse.png  used on input line 292.
+(pdftex.def)             Requested size: 271.7835pt x 203.8345pt.
+ [30 <../output/run_sample/images/train/f1_score/boxplot_train_f1_score.png>]
+<../output/run_sample/images/test/rmse/heatmap_test_rmse.png, id=537, 578.16pt x 433.62pt>
+File: ../output/run_sample/images/test/rmse/heatmap_test_rmse.png Graphic file (type png)
+<use ../output/run_sample/images/test/rmse/heatmap_test_rmse.png>
+Package pdftex.def Info: ../output/run_sample/images/test/rmse/heatmap_test_rmse.png  used on input line 298.
+(pdftex.def)             Requested size: 271.7835pt x 203.8345pt.
+
+
+LaTeX Warning: File `../output/run_sample/images/test/precision/boxplot_test_precision.png' not found on input line 323.
+
+
+Capitoli/cap5.tex:323: Package pdftex.def Error: File `../output/run_sample/images/test/precision/boxplot_test_precision.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.323 ...est/precision/boxplot_test_precision.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[31 <../output/run_sample/images/test/rmse/boxplot_test_rmse.png> <../output/run_sample/images/test/rmse/heatmap_test_rmse.png>]
+
+LaTeX Warning: File `../output/run_sample/images/test/recall/boxplot_test_recall.png' not found on input line 329.
+
+
+Capitoli/cap5.tex:329: Package pdftex.def Error: File `../output/run_sample/images/test/recall/boxplot_test_recall.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.329 ...ages/test/recall/boxplot_test_recall.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `../output/run_sample/images/test/accuracy/boxplot_test_accuracy.png' not found on input line 335.
+
+
+Capitoli/cap5.tex:335: Package pdftex.def Error: File `../output/run_sample/images/test/accuracy/boxplot_test_accuracy.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.335 .../test/accuracy/boxplot_test_accuracy.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[32]
+
+LaTeX Warning: File `../output/run_sample/images/test/f1_score/boxplot_test_f1_score.png' not found on input line 341.
+
+
+Capitoli/cap5.tex:341: Package pdftex.def Error: File `../output/run_sample/images/test/f1_score/boxplot_test_f1_score.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.341 .../test/f1_score/boxplot_test_f1_score.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[33] [34]
+
+LaTeX Warning: Reference `fig:membership_histogram_run_fcm' on page 35 undefined on input line 406.
+
+
+LaTeX Warning: File `../output/run_fcm/images/norm=simple_centering/membership_histogram/membership_histogram_c10_m1.5_fcm_maximum_pearson.png' not found on input line 410.
+
+
+Capitoli/cap5.tex:410: Package pdftex.def Error: File `../output/run_fcm/images/norm=simple_centering/membership_histogram/membership_histogram_c10_m1.5_fcm_maximum_pearson.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.410 ...stogram_c10_m1.5_fcm_maximum_pearson.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[35]
+
+LaTeX Warning: File `../output/run_fcm/images/comparison/test_rmse/heatmap_test_rmse.png' not found on input line 439.
+
+
+Capitoli/cap5.tex:439: Package pdftex.def Error: File `../output/run_fcm/images/comparison/test_rmse/heatmap_test_rmse.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.439 ...mparison/test_rmse/heatmap_test_rmse.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[36] [37]
+
+LaTeX Warning: Reference `fig:clusters_train_rmse_run_kmeans' on page 38 undefined on input line 506.
+
+
+LaTeX Warning: File `../output/run_kmeans/images/norm=simple_centering/fuzzy_clusters/fuzzy_clusters_pca_c6_m2.0_kmeans_maximum_pearson.png' not found on input line 510.
+
+
+Capitoli/cap5.tex:510: Package pdftex.def Error: File `../output/run_kmeans/images/norm=simple_centering/fuzzy_clusters/fuzzy_clusters_pca_c6_m2.0_kmeans_maximum_pearson.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.510 ...s_pca_c6_m2.0_kmeans_maximum_pearson.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `fig:heatmap_train_rmse_run_kmeans' on page 38 undefined on input line 515.
+
+
+Overfull \hbox (15.62866pt too wide) in paragraph at lines 515--516
+[]\T1/cmr/m/n/12 In fi-gu-ra [] si può os-ser-va-re co-me il me-to-do di nor-ma-liz-za-zio-ne mi-glio-re sia sim-ple_centering,
+ []
+
+
+LaTeX Warning: File `../output/run_kmeans/images/comparison/train_rmse/heatmap_train_rmse.png' not found on input line 519.
+
+
+Capitoli/cap5.tex:519: Package pdftex.def Error: File `../output/run_kmeans/images/comparison/train_rmse/heatmap_train_rmse.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.519 ...arison/train_rmse/heatmap_train_rmse.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[38]
+
+LaTeX Warning: Reference `fig:fuzzy_clusters_test_rmse_run_kmeans' on page 39 undefined on input line 545.
+
+
+LaTeX Warning: Reference `fig:clusters_test_rmse_run_kmeans' on page 39 undefined on input line 545.
+
+
+LaTeX Warning: File `../output/run_kmeans/images/norm=simple_centering/fuzzy_clusters/fuzzy_clusters_pca_c16_m2.0_kmeans_maximum_pearson.png' not found on input line 549.
+
+
+Capitoli/cap5.tex:549: Package pdftex.def Error: File `../output/run_kmeans/images/norm=simple_centering/fuzzy_clusters/fuzzy_clusters_pca_c16_m2.0_kmeans_maximum_pearson.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.549 ..._pca_c16_m2.0_kmeans_maximum_pearson.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[39]
+
+LaTeX Warning: File `../output/run_kmeans/images/norm=zscore_per_user/fuzzy_clusters/fuzzy_clusters_pca_c2_m2.0_kmeans_maximum_pearson.png' not found on input line 555.
+
+
+Capitoli/cap5.tex:555: Package pdftex.def Error: File `../output/run_kmeans/images/norm=zscore_per_user/fuzzy_clusters/fuzzy_clusters_pca_c2_m2.0_kmeans_maximum_pearson.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.555 ...s_pca_c2_m2.0_kmeans_maximum_pearson.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[40]
+
+LaTeX Warning: Reference `fig:lineplot_nclusters_train_mae_run_kmeans' on page 41 undefined on input line 580.
+
+) (Capitoli/cap6.tex [41]
+Capitolo 6.
+[42
+
+]) (Appendici/app2.tex [43]
+Appendice A.
+) [44
+
+]
+
+LaTeX Warning: Empty bibliography on input line 120.
+
+(main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  CFB86AAF09439DD016C271A8B292E5F0;9094.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 37277 strings out of 474486
+ 770388 string characters out of 5743283
+ 2137542 words of memory out of 5000000
+ 58585 multiletter control sequences out of 15000+600000
+ 576792 words of font info for 79 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 94i,10n,117p,1249b,2954s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Utente\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawesome/FontAwesome.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (46 pages, 1670600 bytes).
+PDF statistics:
+ 1355 PDF objects out of 1440 (max. 8388607)
+ 455 named destinations out of 1000 (max. 500000)
+ 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -30,7 +30,7 @@ The aim of this work is to explore the use of **fuzzy clustering** in **recommen
 
 **Comparison with the Reference Study:**
 - The original study compared three clustering methods (Fuzzy C-Means, K-means, and SOM), two defuzzification strategies (Maximum and Center of Gravity), and used Pearson correlation for neighbor selection, evaluating on the MovieLens 100k dataset.
-- **This project** implements a modular and extensible framework that supports Fuzzy C-Means and K-means clustering, both Maximum and COG defuzzification, and optional Pearson-based neighbor selection. All choices are fully configurable via `sample.json`.
+- **This project** implements a modular and extensible framework that supports Fuzzy C-Means and K-means clustering, both Maximum and COG defuzzification, and optional Pearson-based neighbor selection. All choices are fully configurable via config files.
 - The system automates experiments across all parameter combinations (normalization, clusters, fuzziness, clustering method, etc.), provides advanced and organized visualizations.
 - All results and configurations are saved for full reproducibility, enabling robust and transparent experimentation.
 - The framework includes an aggregate plotter module that automatically generates summary visualizations across all experiment runs. 
@@ -39,13 +39,6 @@ The aim of this work is to explore the use of **fuzzy clustering** in **recommen
 
 This project implements a **fuzzy clustering approach** for **collaborative filtering** in **recommender systems**. It allows for systematic experimentation with different normalization techniques, cluster counts, and fuzziness parameters, and evaluates performance on the MovieLens 100k and 1M datasets.
 
-The system has been tested through three major experimental runs:
-- **Run Sample**: Baseline exploration with 288 parameter combinations
-- **Run FCM Deep Dive**: Focused optimization of Fuzzy C-Means with 80 configurations
-- **Run K-Means**: Comprehensive benchmark of hard clustering with 108 configurations
-
-Results show significant improvements in recommendation accuracy, with FCM achieving 84% better performance compared to baseline configurations.
-
 ## Features
 
 - **Fuzzy C-Means Clustering** and **K-Means Clustering** for user-item rating prediction
@@ -53,7 +46,7 @@ Results show significant improvements in recommendation accuracy, with FCM achie
 - **Configurable experiment parameters** (clusters, fuzziness, noise, etc.)
 - **Modular selection of clustering, defuzzification, and neighbor selection methods** via config
 - **Automated experiment runner** with reproducible results
-- **Evaluation metrics**: RMSE, MAE, membership entropy, etc.
+- **Evaluation metrics**: RMSE, MAE, precision, recall, accuracy, F1-score
 - **Visualization**: PCA plots, membership histograms, heatmaps
 - **Results and configuration saving** for reproducibility
 - **Comprehensive LaTeX report** with theoretical foundations and experimental analysis
@@ -65,19 +58,21 @@ fuzzy-recommender-system/
   config/                # Experiment configuration files
   dataset/               # MovieLens datasets (100k, 1M)
   output/                # Results and plots
-  report/                # LaTeX files for comprehensive report
+  report/                # LaTeX files for comprehensive report (in Italian)
     Capitoli/            # Report chapters
       cap1.tex          # Introduction and motivation
       cap2.tex          # Theoretical foundations
-      cap3.tex          # System implementation
-      cap4.tex          # Experimental results
-      cap5.tex          # Conclusions and future work
+      cap3.tex          # EDA
+      cap4.tex          # System implementation
+      cap5.tex          # Experimental results
+      cap6.tex          # Conclusions and future work
+    report.tex          # Main latex file
+    report.pdf          # Final report
   runner/                # Experiment orchestration and management
   utils/                 # Clustering, evaluation, normalization,
   LICENSE                # License file
   main.py                # Main entry point
   README.md              # This file
-  relazione.pdf          # Comprehensive report (in Italian)
 ```
 
 ## Files Overview
@@ -86,9 +81,8 @@ fuzzy-recommender-system/
 - **main.py**: Entry point for running experiments. Loads the configuration and launches the experiment pipeline via the `Runner` class.
 
 **config/**
-- **sample.json**: Main configuration file. Controls all experiment parameters, methods, and plotting options.
-- **run_fcm_deep_dive.json**: Optimized configuration for FCM analysis with extended parameter ranges.
-- **run_kmeans.json**: Configuration for comprehensive K-Means benchmarking.
+- **run_fcm.json**: Configuration for FCM analysis.
+- **run_kmeans.json**: Configuration for K-Means analysis.
 
 **runner/**
 - **Runner.py**: Orchestrates the entire experiment workflow: loads config, prepares data, runs all experiment combinations, saves results, and triggers aggregate plotting.
@@ -101,6 +95,7 @@ fuzzy-recommender-system/
 - **aggregate_plotter.py**: Aggregates and visualizes results across multiple experiment runs, generating summary plots and tables for comparison.
 - **Cluster.py**: Implements clustering algorithms, including Fuzzy C-Means (FCM) and K-Means, and provides prediction logic based on user cluster memberships.
 - **defuzzifier.py**: Supplies defuzzification methods (Maximum, Center of Gravity) to convert fuzzy cluster memberships into crisp cluster assignments.
+- **eda_movielens100k.py**: Experimental Dataset Analysis on MovieLens 100k ratings Dataset.
 - **Evaluator.py**: Offers evaluation metrics (RMSE, MAE), denormalization utilities, and neighbor selection functions using Pearson correlation.
 - **Plotter.py**: Manages all visualizations, including PCA cluster plots, membership histograms, heatmaps, and rating distribution plots, organized by normalization and experiment.
 - **normalizer.py**: Implements normalization techniques for the user-item rating matrix, such as centering, z-score, min-max scaling, and no normalization.
@@ -110,9 +105,10 @@ fuzzy-recommender-system/
 **report/Capitoli/**
 - **cap1.tex**: Introduction to fuzzy sets, recommender systems, and project objectives
 - **cap2.tex**: Theoretical foundations covering fuzzy logic, clustering, and collaborative filtering
-- **cap3.tex**: Detailed system implementation including architecture, algorithms, and design choices
-- **cap4.tex**: Comprehensive experimental results and analysis of three major runs
-- **cap5.tex**: Conclusions, limitations, and future development directions
+- **cap3.tex**: Experimental Dataset Analysis executed on MovieLens 100k Dataset
+- **cap4.tex**: Detailed system implementation including architecture, algorithms, and design choices
+- **cap5.tex**: Comprehensive experimental results and analysis
+- **cap6.tex**: Conclusions, limitations, and future development directions
 
 ## Installation
 
@@ -136,16 +132,21 @@ fuzzy-recommender-system/
 
 ## Configuration
 
-All experiment settings are controlled via `config/sample.json`. Example:
+All experiment settings are controlled via config file. The system supports different clustering methods with appropriate parameter handling:
+
+- **FCM (Fuzzy C-Means)**: Uses all parameters including `m_values` (fuzziness) and `defuzzification_methods`
+- **K-means**: Hard clustering that ignores `m_values` and `defuzzification_methods` (uses fixed values internally)
+
+FCM configuration:
 
 ```json
 {
     "dataset_name": "ml-100k",
-    "normalizations": ["simple_centering", "zscore_per_user", "minmax_per_user", "no_normalization"],
-    "min_user_ratings": 150,
-    "min_item_ratings": 150,
-    "cluster_values": [4, 6, 8],
-    "m_values": [1.5, 2.0, 2.5],
+    "normalizations": ["no_normalization", "simple_centering", "minmax_per_user", "zscore_per_user"],
+    "min_user_ratings": 100,
+    "min_item_ratings": 100,
+    "cluster_values": [2, 3, 4, 5],
+    "m_values": [1.2, 1.5, 1.8, 2.0, 2.2, 2.5],
     "noise_std": 0.05,
     "test_size": 0.2,
     "random_state": 42,
@@ -156,22 +157,63 @@ All experiment settings are controlled via `config/sample.json`. Example:
     "show_plots": false,
     "images_subdir": "images",
     "results_subdir": "results",
-    "run_timestamp_format": "run_%Y_%m_%d_%H_%M_%S",
-    "clustering_methods": ["fcm", "kmeans"],
+    "run_timestamp_format": "run_fcm",
+    "clustering_methods": ["fcm"],
     "defuzzification_methods": ["maximum", "cog"],
-    "neighbor_selection_methods": ["none", "pearson"],
+    "neighbor_selection_methods": ["pearson"],
+    "summary_only": false,
     "top_n": 5,
-    "summary_only": false
+    "top_n_evaluation": {
+        "n_recommendations": 10,
+        "rating_threshold": 4.0
+    }
 }
+
+```
+K-Means configuration:
+```json
+{
+    "dataset_name": "ml-100k",
+    "normalizations": ["no_normalization", "simple_centering", "minmax_per_user", "zscore_per_user"],
+    "min_user_ratings": 100,
+    "min_item_ratings": 100,
+    "cluster_values": [2, 3, 4, 5],
+    "m_values": [2.0],
+    "noise_std": 0.05,
+    "test_size": 0.2,
+    "random_state": 42,
+    "seed": 31,
+    "max_iter": 3000,
+    "error": 1e-06,
+    "output_dir": "output",
+    "show_plots": false,
+    "images_subdir": "images",
+    "results_subdir": "results",
+    "run_timestamp_format": "run_kmeans",
+    "clustering_methods": ["kmeans"],
+    "defuzzification_methods": ["maximum"],
+    "neighbor_selection_methods": ["pearson"],
+    "summary_only": false,
+    "top_n": 5,
+    "top_n_evaluation": {
+        "n_recommendations": 10,
+        "rating_threshold": 4.0
+    }
+} 
 ```
 
 ### Configuration Parameters
 
-- **clustering_methods**: List of clustering algorithms to use ("fcm", "kmeans")
-- **defuzzification_methods**: List of defuzzification strategies ("maximum", "cog")
-- **neighbor_selection_methods**: List of neighbor selection strategies ("none", "pearson")
-- **top_n**: Number of top runs to show in the summary and plots for each metric (default: 5)
-- **summary_only**: If true, only the summary and plots are generated from the latest results, without running new experiments
+- **normalizations**: List of normalization methods to use (options include "no_normalization", "simple_centering", "minmax_per_user", "zscore_per_user").
+- **clustering_methods**: List of clustering algorithms to use (such as "fcm" or "kmeans").
+- **min_user_ratings**: The minimum number of ratings a user must have provided to be included in the analysis.
+- **min_item_ratings**: The minimum number of ratings a movie must have received to be included in the analysis.
+- **defuzzification_methods**: List of defuzzification strategies to apply (for example, "maximum" or "cog").
+- **neighbor_selection_methods**: List of neighbor selection strategies to use (such as "none" or "pearson").
+- **top_n**: The number of top-performing runs to display in the summary and plots for each evaluation metric (default is 5).
+- **summary_only**: If set to true, the system will generate only the summary and plots from the most recent results, without running new experiments.
+- **n_recommendations**: The number of items recommended to each user for the purpose of evaluating recommendation quality.
+- **rating_threshold**: Minimum predicted rating value that an item must reach to be considered recommended in the evaluation of top-N recommendation metrics. 
 
 ## Usage
 
@@ -182,18 +224,10 @@ python main.py
 ```
 
 - Results and plots will be saved in a timestamped subdirectory under `output/`.
-- You can adjust experiment parameters in `config/sample.json` or create a new config file.
-- To generate only the summary and aggregate plots from the latest results, set `"summary_only": true` in `sample.json` and run `python main.py`.
+- You can adjust experiment parameters in the config files or create a new config file.
+- To generate only the summary and aggregate plots from the latest results, set `"summary_only": true` in the config file and run `python main.py`.
 
 ### Running Specific Experimental Configurations
-
-To run the pre-configured experimental runs:
-
-```bash
-# Copy the desired configuration to sample.json
-cp config/run_fcm_deep_dive.json config/sample.json
-python main.py
-```
 
 ## Datasets
 
@@ -203,7 +237,7 @@ python main.py
 
 ## Normalization Methods
 
-Available normalization strategies (set in `sample.json`):
+Available normalization strategies:
 
 - `"simple_centering"`: Subtracts each user's mean rating
 - `"zscore_per_user"`: Z-score normalization per user
@@ -228,67 +262,21 @@ Available normalization strategies (set in `sample.json`):
 
 - **RMSE** (Root Mean Squared Error)
 - **MAE** (Mean Absolute Error)
+- **Precision** (Top-N recommendation quality)
+- **Recall** (Top-N recommendation coverage)
+- **Accuracy** (Top-N recommendation accuracy)
+- **F1-Score** (Harmonic mean of precision and recall)
 - **Average Maximum Membership** (cluster certainty)
 - **Average Entropy** (membership uncertainty)
 - **Clustering Time** (seconds)
 
 ## Outputs & Visualization
 
-- **Results**: Saved as JSON and CSV in `output/<timestamp>/results/`
+- **Results**: Saved as JSON and CSV in `output/<run_name>/results/`
 - **Config**: Saved alongside results for reproducibility
-- **Plots**: Saved in `output/<timestamp>/images/` organized by normalization and plot type:
-  - `comparison/<metric>/`: For each main metric (`train_rmse`, `train_mae`, `test_rmse`, `test_mae`), contains:
-    - `barplot_top_N_<metric>.png`: Barplot of the top-N runs for the metric
-    - `heatmap_<metric>.png`: Heatmap of the metric by n_clusters and normalization
-    - `boxplot_<metric>.png`: Boxplot of the metric by clustering method
-  - `fuzzy_clusters/`: PCA scatter plots of user clusters
-  - `membership_histogram/`: Membership histograms
-  - `membership_heatmap/`: Heatmaps of most uncertain users
+- **Plots**: Saved in `output/<run_name>/images/` organized by normalization and phase:
 - **Summary**: `summary.txt` in the results directory contains the top-N runs for each main metric, ranked from best (1) to worst (N)
 - **Aggregate Comparison**: All aggregate plots and summary are generated automatically after each experiment, or can be generated standalone with `summary_only` mode
-
-### Aggregate Comparison Plots
-
-After every experiment run, aggregate comparison plots and a summary are automatically generated for each main metric (`train_rmse`, `train_mae`, `test_rmse`, `test_mae`).
-
-- All plots are saved in `images/comparison/<metric>/` for each metric.
-- The number of top runs shown is configurable via `top_n` in `sample.json`.
-- The summary and plots are always ranked from best (rank 1) to worst (rank N) for each metric.
-- Metrics `avg_max_membership` and `avg_entropy` are no longer included in the summary or plots for clarity.
-
-## Experimental Results
-
-The system has been extensively tested through three major experimental runs, each providing unique insights into the performance of fuzzy clustering for recommender systems.
-
-### Run Sample
-- **Configurations**: 288 parameter combinations
-- **Parameters**: 4 normalizations × 3 clusters × 3 fuzziness × 2 algorithms × 2 defuzzifications × 2 neighbor selections
-- **Best Results**: RMSE 3.816, MAE 3.704
-- **Key Findings**: 
-  - FCM with 8 clusters and m=1.5 optimal for RMSE
-  - K-Means with 4 clusters optimal for MAE
-  - Min-max normalization most effective
-  - FCM shows more balanced membership distributions
-
-### Run FCM Deep Dive
-- **Configurations**: 80 focused FCM configurations
-- **Parameters**: Extended cluster range (6-12), granular fuzziness (1.2-2.2)
-- **Best Results**: RMSE 0.594, MAE 0.468 (84% improvement over baseline)
-- **Key Findings**:
-  - 12 clusters with m=2.0 optimal configuration
-  - Simple centering superior to min-max normalization
-  - Pearson correlation improves performance by 15-20% but increases computation time 1000x
-  - Membership maximum reduced to 0.08, indicating very uniform preference distribution
-
-### Run K-Means Benchmark
-- **Configurations**: 108 K-Means configurations
-- **Parameters**: Comprehensive parameter sweep for hard clustering comparison
-- **Best Results**: RMSE 0.597, MAE 0.465
-- **Key Findings**:
-  - 15 clusters optimal for K-Means
-  - FCM slightly better for RMSE (0.594 vs 0.597)
-  - K-Means slightly better for MAE (0.465 vs 0.468)
-  - Binary membership (1.0) with zero entropy confirms hard clustering nature
 
 ## Contributing
 

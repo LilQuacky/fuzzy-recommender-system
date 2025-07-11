@@ -1,0 +1,4 @@
+Users: 364
+Items: 338
+Ratings: 45926
+Density: 0.3733

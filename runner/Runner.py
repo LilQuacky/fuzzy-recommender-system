@@ -74,31 +74,34 @@ class Runner:
                   results[norm_name][str(c)][str(m)] = {}
                   for clustering_method in clustering_methods:
                       results[norm_name][str(c)][str(m)][clustering_method] = {}
-                      for defuzz_method in defuzz_methods:
+                      
+                      # For K-means, use fixed values since it's hard clustering
+                      if clustering_method == "kmeans":
+                          effective_defuzz_methods = ["maximum"]
+                          effective_m = 2.0 
+                      else:
+                          effective_defuzz_methods = defuzz_methods
+                          effective_m = m
+                      
+                      for defuzz_method in effective_defuzz_methods:
                           results[norm_name][str(c)][str(m)][clustering_method][defuzz_method] = {}
                           for neighbor_method in neighbor_methods:
                               base_plot_dir = os.path.join(
                                   self.config["images_dir"],
-                                  f"norm={norm_name}"
+                                  "normalization",
+                                  f"{norm_name}"
                               )
                               os.makedirs(base_plot_dir, exist_ok=True)
-                              # Sottodirectory per ogni tipo di plot
-                              comparison_dir = os.path.join(base_plot_dir, "comparison")
-                              fuzzy_clusters_dir = os.path.join(base_plot_dir, "fuzzy_clusters")
-                              membership_heatmap_dir = os.path.join(base_plot_dir, "membership_heatmap")
-                              membership_histogram_dir = os.path.join(base_plot_dir, "membership_histogram")
-                              for d in [comparison_dir, fuzzy_clusters_dir, membership_heatmap_dir, membership_histogram_dir]:
-                                  os.makedirs(d, exist_ok=True)
-                              # Passa la directory base al Plotter, che poi userà le subdir in base al tipo di plot
                               plotter = Plotter(base_plot_dir, show_plots=self.config.get("show_plots"))
-                              print(f"Running: norm={norm_name}, c={c}, m={m}, clustering={clustering_method}, defuzz={defuzz_method}, neighbor={neighbor_method}")
+                              print(f"Running: norm={norm_name}, c={c}, m={effective_m}, clustering={clustering_method}, defuzz={defuzz_method}, neighbor={neighbor_method}")
                               experiment = Experiment(
                                   R_train_scaled, R_test_scaled, R_train, R_test_aligned,
-                                  n_clusters=c, m=m, max_iter=max_iter, error=error, seed=seed,
+                                  n_clusters=c, m=effective_m, max_iter=max_iter, error=error, seed=seed,
                                   clusterer=clusterer, evaluator=evaluator, plotter=plotter,
                                   clustering_method=clustering_method,
                                   defuzz_method=defuzz_method,
-                                  neighbor_method=neighbor_method
+                                  neighbor_method=neighbor_method,
+                                  top_n_config=self.config.get("top_n_evaluation", {"n_recommendations": 10, "rating_threshold": 4.0})
                               )
                               metrics = experiment.run()
                               results[norm_name][str(c)][str(m)][clustering_method][defuzz_method][neighbor_method] = metrics

@@ -1,0 +1,23 @@
+\chapter{Conclusioni e Sviluppi Futuri}
+\label{chap:chap6}
+
+\section{Conclusioni}
+
+Il lavoro svolto ha permesso di esplorare in profondità l'applicazione del \emph{fuzzy clustering} nei \emph{sistemi di raccomandazione}, con particolare attenzione al confronto tra l'algoritmo \emph{Fuzzy C-Means (FCM)} e il più tradizionale \emph{K-Means}. Attraverso la progettazione e l'implementazione di un framework sperimentale flessibile, è stato possibile testare numerose configurazioni, strategie di normalizzazione e parametri, conducendo esperimenti sistematici sul dataset \emph{MovieLens 100k}.
+
+Dall'analisi dei risultati sperimentali, emerge un quadro chiaro: le prestazioni dei due algoritmi, sia tramite metriche di errore che di qualità, sono molto simili.
+
+Un aspetto particolarmente rilevante, emerso dall'analisi delle heatmap delle membership e dei fuzzy clusters, è la difficoltà di FCM nel distinguere cluster realmente significativi all'interno del dataset. I valori medi di appartenenza ai cluster risultano distribuiti in modo abbastanza uniforme, e quando vi è una leggera sfumatura è difficile interpretare il cluster realizzato, suggerendo che questo possa creare overfitting. L'entropia elevata suggerisce una forte sovrapposizione tra i cluster stessi. Questo fenomeno è probabilmente riconducibile all'\emph{omogeneità del dataset}, che \emph{limita la possibilità di apprendere strutture fuzzy realmente informative}.
+
+In sintesi, i risultati ottenuti suggeriscono che, almeno nel contesto e con i dati considerati, l'approccio fuzzy non apporta un miglioramento sostanziale rispetto al clustering hard. Tuttavia, il \emph{framework} sviluppato si è dimostrato efficace nell'esplorare lo spazio delle configurazioni e potrà essere \emph{facilmente esteso} a contesti e dataset differenti.
+
+\section{Sviluppi Futuri}
+
+Alla luce delle evidenze sperimentali raccolte, si delineano diversi possibili sviluppi futuri per approfondire e ampliare la ricerca:
+\begin{itemize}
+\item \textbf{Mantenimento Sparsità Originale}: Per rendere il progetto computabile a livello hardware, si è resa necessaria una fase di preprocessing in cui sono stati mantenuti solo film e utenti con almeno 100 valutazioni, portando la densità dal 6\% al 37\%. Questo può aver reso troppo densi i valori e rimosso eventuali sfumature e strutture presenti nel dataset. Un possibile sviluppo potrebbe essere quello di mantenere la sparsità originale e di valutare l'impatto di questa scelta sulle performance.
+\item \textbf{Applicazione a dataset di dominio differente}: L'omogeneità del MovieLens 100k ha probabilmente limitato la capacità del fuzzy clustering di individuare strutture latenti. Un naturale sviluppo consiste nell'applicare il framework a dataset di natura diversa, ad esempio in ambito e-commerce, musica o news, dove la varietà delle preferenze utente potrebbe favorire la formazione di cluster fuzzy più significativi.
+\item \textbf{Analisi su dataset di dimensioni maggiori}: Un'estensione immediata riguarda l'utilizzo del dataset MovieLens 1M, che, grazie al maggior numero di utenti e item, potrebbe offrire una maggiore eterogeneità e quindi permettere al fuzzy clustering di esprimere appieno il proprio potenziale. Essendo il dataset già compatibile all'interno del sistema, un'analisi esplorativa (EDA) su questo dataset potrebbe fornire indicazioni preziose sull'eventuale presenza di strutture più complesse e sulla separabilità dei cluster.
+\item \textbf{Variazione di ulteriori parametri}: Gli esperimenti condotti si sono concentrati principalmente su normalizzazione, numero di cluster e grado di fuzziness. Un approfondimento futuro potrebbe riguardare la variazione sistematica di altri parametri, quali la quantità di rumore aggiunto, la dimensione del test set, il numero minimo di rating per utente e per item, al fine di valutare l'impatto di tali scelte sulle performance e sulla natura dei cluster individuati.
+\item \textbf{Sviluppo e confronto con altre tecniche}: Infine, il framework potrebbe essere esteso per includere e confrontare ulteriori tecniche di clustering fuzzy (ad esempio, Gustafson-Kessel, Possibilistic C-Means) o approcci ibridi che integrino informazioni di contenuto o relazionali, al fine di valutare se tali metodologie possano superare i limiti osservati con FCM.
+\end{itemize}

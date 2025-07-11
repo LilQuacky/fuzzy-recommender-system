@@ -1,24 +1,21 @@
 {
     "dataset_name": "ml-100k",
     "normalizations": [
+        "no_normalization",
         "simple_centering",
-        "zscore_per_user",
-        "minmax_per_user"
+        "minmax_per_user",
+        "zscore_per_user"
     ],
-    "min_user_ratings": 150,
-    "min_item_ratings": 150,
+    "min_user_ratings": 100,
+    "min_item_ratings": 100,
     "cluster_values": [
+        2,
+        3,
         4,
-        6,
-        8,
-        10,
-        12,
-        15
+        5
     ],
     "m_values": [
-        1.5,
-        2.0,
-        2.5
+        2.0
     ],
     "noise_std": 0.05,
     "test_size": 0.2,
@@ -35,17 +32,19 @@
         "kmeans"
     ],
     "defuzzification_methods": [
-        "maximum",
-        "cog"
+        "maximum"
     ],
     "neighbor_selection_methods": [
-        "none",
         "pearson"
     ],
     "summary_only": false,
     "top_n": 5,
-    "run_timestamp": "run_2025_07_05_14_05_59",
-    "base_output_dir": "output\\run_2025_07_05_14_05_59",
-    "images_dir": "output\\run_2025_07_05_14_05_59\\images",
-    "results_dir": "output\\run_2025_07_05_14_05_59\\results"
+    "top_n_evaluation": {
+        "n_recommendations": 10,
+        "rating_threshold": 4.0
+    },
+    "run_timestamp": "run_2025_07_10_15_32_36",
+    "base_output_dir": "output\\run_2025_07_10_15_32_36",
+    "images_dir": "output\\run_2025_07_10_15_32_36\\images",
+    "results_dir": "output\\run_2025_07_10_15_32_36\\results"
 }

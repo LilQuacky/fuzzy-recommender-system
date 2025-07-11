@@ -15,7 +15,7 @@ class DataManager:
         self.config = config
 
     def load_and_preprocess(self):
-        if self.config.get('dataset_name', 'ml-100k') == 'ml-1m':
+        if self.config.get('dataset_name') == 'ml-1m':
             _, R = load_data_1m()
         else:
             _, R = load_data_100k()
@@ -32,7 +32,6 @@ class DataManager:
             R_train_norm = R_train.astype(float)
             R_test_norm = R_test_aligned.astype(float)
         
-        # Fill dei valori mancanti
         global_mean = R_train_norm.stack().mean()
         R_train_filled = R_train_norm.apply(lambda row: row.fillna(row.mean() if not np.isnan(row.mean()) else global_mean), axis=1)
         R_test_filled = R_test_norm.apply(lambda row: row.fillna(row.mean() if not np.isnan(row.mean()) else global_mean), axis=1)
