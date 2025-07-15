@@ -101,7 +101,7 @@ Experiments were conducted on MovieLens 100k, filtering users and items with at 
 
 Example comparison table:
 
-| Metric    | FCM Train | K-Means Train | FCM Test | K-Means Test |
+| Metric    | FCM Train | K-Means Train| FCM Test | K-Means Test |
 |-----------|-----------|--------------|----------|--------------|
 | RMSE      | 0.6851    | 0.6864       | 0.6789   | 0.6817       |
 | MAE       | 0.5107    | 0.5092       | 0.5448   | 0.5409       |
@@ -127,12 +127,12 @@ fuzzy-recommender-system/
   config/                # Experiment configuration files
   dataset/               # MovieLens data (100k, 1M)
   output/                # Results and plots
-  report/                # LaTeX report (in Italian)
-    Capitoli/            # Report chapters
   runner/                # Experiment orchestration
   utils/                 # Clustering, evaluation, normalization, plotting
   main.py                # Entry point
+  presentazione.pdf      # presentation of the work in pdf
   README.md              # This file
+  relazione.pdf          # report of the work in pdf
 ```
 
 ## Installation
